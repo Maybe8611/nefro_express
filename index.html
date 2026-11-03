@@ -6297,6 +6297,25 @@ render();
   };
 })();
 /*ENDREFSMOD*/
+/*HOMEFOLD*/
+(function () {
+  var st = document.createElement("style");
+  st.textContent = ".wrap.home-fold .searchbar,.wrap.home-fold #view{display:none}#homebtn{display:none}.wrap.home-fold #homebtn{display:flex}#homebtn{align-items:center;justify-content:center;gap:10px;width:100%;margin:14px 0 6px;padding:16px 18px;border-radius:16px;border:1px solid rgba(242,182,50,.7);background:linear-gradient(180deg,#FFE9A3,#F2B632 60%,#C98A10);color:#1A1200;font:700 1.1rem var(--font-body);cursor:pointer;box-shadow:0 8px 22px -10px rgba(242,182,50,.7)}#homebtn:focus-visible{outline:3px solid #fff;outline-offset:2px}#homebtn i{width:10px;height:10px;border-right:3px solid #1A1200;border-bottom:3px solid #1A1200;transform:rotate(45deg);margin-top:-5px}";
+  document.head.appendChild(st);
+  var open = false, wrap = document.querySelector(".wrap"), mast = document.getElementById("mast");
+  var btn = document.createElement("button");
+  btn.id = "homebtn"; btn.type = "button"; btn.innerHTML = "Ver todos los temas <i></i>";
+  mast.parentNode.insertBefore(btn, mast.nextSibling);
+  btn.addEventListener("click", function () { open = true; render(); window.scrollTo(0, 0); });
+  var base = render;
+  render = function () {
+    base.apply(this, arguments);
+    var home = mast.classList.contains("full");
+    wrap.classList.toggle("home-fold", home && !open);
+  };
+  render();
+})();
+/*ENDHOMEFOLD*/
 /*BACKNAV*/
 (function () {
   var cur = null, popping = false;
