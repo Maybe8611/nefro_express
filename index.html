@@ -288,7 +288,7 @@ body { padding-bottom: 84px; }
 .mast .slogan, .mast .meta { display: none; }
 .mark { width: 48px; height: 30px; }
 .mast .brand { font-size: 1.5rem; }
-.mast .tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; overflow: visible; background: var(--surface); border-top: 1px solid var(--line); padding: 6px max(8px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); box-shadow: 0 -4px 14px rgba(0,0,0,.06); }
+.mast .tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; overflow: visible; background: var(--surface); border-top: 1px solid var(--line); padding: 6px max(8px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); box-shadow: 0 -4px 14px rgba(0,0,0,.06); }
 .mast .tab, .mast .tab[aria-pressed="true"], .mast .tab[data-mode="farm"] { flex: none; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 6px 2px; border-radius: 10px; background: none; border: 0; color: var(--muted); font-size: 0.72rem; font-weight: 600; line-height: 1.15; text-align: center; white-space: normal; }
 .mast .tab::before, .mast .tab::after, .mast .tab:last-child::after, .mast .tab[data-mode="farm"]::after, .mast .tab[data-mode="dial"]::after { display: none; content: none; }
 .mast .tab svg { width: 24px; height: 24px; }
@@ -583,6 +583,7 @@ body { padding-bottom: 84px; }
 .gf select{font:inherit;padding:10px;border:2px solid color-mix(in srgb,var(--gc) 72%,#000);border-radius:10px;background:var(--surface);color:var(--ink);min-width:0;width:100%;box-sizing:border-box}
 .calc-out{margin-top:10px}
 .calcbox .gas-btn{margin-top:2px}
+.calcbox select.uni{font:inherit;font-size:.75rem;padding:2px 4px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--muted);justify-self:start}
 .fx-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:10px 0 4px}
 .fx-fav{font:inherit;font-weight:600;padding:7px 12px;border-radius:999px;border:2px solid #b8860b;background:var(--surface);color:var(--ink);cursor:pointer}
 .fx-fav[aria-pressed="true"]{background:#ffe9a8;color:#3d2b00}
@@ -891,6 +892,7 @@ html.home-navy .golink.gl8[class]>span{border-left-color:rgb(30,150,100)!importa
     <div class="tabs" role="group" aria-label="Secciones">
       <button class="tab" type="button" data-mode="temas" aria-pressed="true" title="Temas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5z M8 10h8 M8 14h8 M8 18h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Temas</span></button>
       <button class="tab" type="button" data-mode="guardia" aria-pressed="false" title="Modo guardia: discutir un caso"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Guardia</span></button>
+      <button class="tab" type="button" data-mode="calc" aria-pressed="false" title="Calculadoras"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 7h8M8 12h2M12 12h2M16 12h0M8 16h2M12 16h2M16 16h0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Calcular</span></button>
       <button class="tab" type="button" data-mode="dial" aria-pressed="false" title="Diálisis: Kt/V y prescripción"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Diálisis</span></button>
       <button class="tab" type="button" data-mode="farm" aria-pressed="false" title="Ajustes de fármacos en enfermedad renal crónica"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="7" rx="3.5" transform="rotate(-35 12 12.5)" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 8.5l5 7" stroke="currentColor" stroke-width="1.8"/></svg><span>Fármacos</span></button>
     </div>
@@ -921,7 +923,7 @@ html.home-navy .golink.gl8[class]>span{border-left-color:rgb(30,150,100)!importa
         <p><b>¿Encontraste un error?</b> Avisa a quien te compartió la guía, indicando el tema y el dato.</p>
       </div>
     </details>
-<p class="nxver" style="margin:10px 0 0;font-size:.74rem;opacity:.75">Versión de la app: 4 nov 2026 · 11:30 · +16 fármacos verificados</p>
+<p class="nxver" style="margin:10px 0 0;font-size:.74rem;opacity:.75">Versión de la app: 4 nov 2026 · calculadoras unidas en «Calcular», con mg/dL y mmol/L (también ácido-base)</p>
   </footer>
 </div>
 
@@ -1333,6 +1335,32 @@ var DATA = [
   ref: "Consenso ACR-NKF 2020 (verificado en resúmenes secundarios del consenso)"
 },
 {
+  id: "periprocedimiento", cat: 4, title: "Qué suspender y reiniciar: contraste, cirugía y ayuno",
+  aka: "suspender metformina contraste sglt2 cirugia ayuno ieca ara ii diureticos aine perioperatorio preoperatorio reiniciar cetoacidosis",
+  sum: "Metformina, iSGLT2, IECA/ARA II, AINE y diuréticos alrededor de un procedimiento.",
+  concept: "Antes de un contraste yodado o de una cirugía programada hay que decidir qué fármacos retirar y cuándo reiniciarlos. Lo que sigue reúne solo los puntos que pude contrastar con una fuente; lo demás está marcado como no verificado.",
+  manejo: [
+    "§1. Contraste yodado (consenso ACR-NKF 2020)",
+    "Riesgo bajo con TFGe ≥45; mayor con TFGe <30 o LRA. Profilaxis con suero salino isotónico solo con TFGe <30 o LRA sin diálisis; con TFGe 30–44 individualizar; no con TFGe ≥45 ni en diálisis crónica anúrica.",
+    "TFGe <30 o LRA: considerar retirar AINE y diuréticos no esenciales 24–48 h antes y 48 h después, si es factible. Los inhibidores del SRAA: controvertido; el documento sugiere considerar suspenderlos ≥48 h antes de un contraste electivo en pacientes de riesgo.",
+    "Metformina (ACR 2023): TFGe ≥30 y sin LRA, no hace falta suspenderla. TFGe <30, LRA o estudio arterial con riesgo de émbolos renales: suspender, mantener 48 h y reiniciar tras confirmar función renal. La ficha de la FDA es más estricta: suspender con TFGe 30–60, hepatopatía, alcoholismo, IC o contraste intraarterial, y reevaluar TFGe a las 48 h; si es estable, reiniciar. Seguir la política local.",
+    "§2. Inhibidores de SGLT2 antes de cirugía programada (FDA)",
+    "Suspender canagliflozina, dapagliflozina y empagliflozina <code>3 días</code> antes; ertugliflozina <code>4 días</code> antes. Motivo: riesgo de cetoacidosis perioperatoria. Controlar la glucemia tras suspender.",
+    "Reiniciar cuando la ingesta oral esté en su nivel basal y se hayan resuelto otros factores de riesgo de cetoacidosis.",
+    "§3. IECA/ARA II antes de cirugía no cardiaca",
+    "Si se usan para hipertensión: las guías ESC/ESA 2014 y la sociedad canadiense recomiendan omitirlos <code>24 h</code> antes de la cirugía. Si se usan por insuficiencia cardiaca con disfunción sistólica: continuarlos (ESC/ESA 2014). La ACC/AHA 2014 considera razonable continuarlos. Reiniciar cuando la presión arterial y el volumen se hayan estabilizado.",
+    "No verificado en esta revisión: ESC 2022, anticoagulantes, diuréticos en cirugía y reinicio con TFGe disminuida tras la cirugía."
+  ],
+  claves: [
+    "Metformina y SGLT2 son las dos decisiones donde más se equivoca la rutina: metformina depende de la TFGe y de la vía del contraste; SGLT2 se suspende por días, no por horas.",
+    "El contraste no justifica por sí solo iniciar ni reprogramar diálisis.",
+    "La evidencia sobre suspender IECA/ARA II antes de cirugía es observacional y los ensayos recientes no muestran diferencia clara en mortalidad: la decisión depende de por qué se usan y del riesgo de hipotensión.",
+    "Tras el procedimiento, repetir creatinina a las 48 h si hubo contraste con TFGe <30, LRA o se retiró metformina."
+  ],
+  alert: "Paciente con iSGLT2 que llega a cirugía urgente o en ayuno prolongado: pedir cetonas y gasometría aunque la glucemia sea normal (cetoacidosis euglucémica).",
+  ref: "Consenso ACR-NKF 2020; ACR Manual on Contrast Media 2023 y ficha FDA de metformina (vía revisión secundaria); FDA 2020, aviso sobre iSGLT2 (vía MDedge); ESC/ESA 2014 y CCS citados en un protocolo de ensayo. Confirmar con la política del hospital"
+},
+{
   id: "litiasis", cat: 4, title: "Litiasis renal y cólico nefrítico",
   aka: "calculos renales litiasis colico renal ureteral tamsulosina ketorolaco citrato hidronefrosis",
   sum: "Analgesia, imagen y criterios de derivación.",
@@ -1444,30 +1472,6 @@ var DATA = [
     "Sin mejoría en 48–72 h: repetir el cultivo y descartar absceso, obstrucción o uropatía."
   ],
   ref: "AAP 2011; guías europeas de ITU pediátrica. No reverificada"
-},
-{
-  id: "formulas", cat: 6, title: "Fórmulas y conversiones",
-  aka: "formulas calculos cockcroft gault fena osmolaridad anion gap calcio corregido deficit de agua conversiones mmol mg/dL",
-  sum: "Las fórmulas de uso más frecuente en la consulta.",
-  concept: "Atajos de uso clínico en adultos. Muchos laboratorios informan la TFGe con CKD-EPI 2021 (sin variable de raza): usar ese valor para estadificar.",
-  manejo: [
-    "§Función renal",
-    "Cockcroft-Gault (mL/min): <code>(140 − edad) × peso (kg) / (72 × creatinina mg/dL)</code>; × 0.85 en mujeres.",
-    "FeNa (%): <code>(Na urinario × creatinina plasmática) / (Na plasmático × creatinina urinaria) × 100</code>.",
-    "§Equilibrio ácido-base y sodio",
-    "Brecha aniónica: <code>Na − (Cl + HCO₃)</code>. Winter: <code>1.5 × HCO₃ + 8 ± 2</code>.",
-    "Osmolalidad plasmática (mg/dL): <code>2 × Na + glucosa/18 + BUN/2.8</code>; en mmol/L: <code>2 × Na + glucosa + urea</code>.",
-    "Déficit de agua libre: <code>ACT × (Na / 140 − 1)</code>.",
-    "§Calcio",
-    "Calcio corregido: <code>Ca + 0.8 × (4 − albúmina g/dL)</code>.",
-    "§Conversiones",
-    "Creatinina: mg/dL × 88.4 = µmol/L. Glucosa: mmol/L × 18 = mg/dL. Calcio: mg/dL ÷ 4.0 = mmol/L. Urea (mmol/L) = BUN (mg/dL) × 0.357."
-  ],
-  claves: [
-    "Natremia corregida por glucosa: se suma 1.6–2.4 mEq/L de Na⁺ por cada 100 mg/dL (5.6 mmol/L) de glucemia sobre lo normal (habitual 2).",
-    "En pesos extremos o ancianos frágiles, Cockcroft-Gault y CKD-EPI pueden diferir de forma importante: decidir con criterio clínico."
-  ],
-  ref: "Fórmulas estándar de nefrología"
 },
 {"id": "cvc-transitorio", "title": "Catéter venoso central transitorio (no tunelizado)", "aka": "catheter transitorio temporal no tunelizado hemodialisis yugular femoral acceso vascular urgente seldinger ecografia", "sum": "Acceso urgente y temporal: sitio, técnica y complicaciones.", "cat": 7, "concept": "Catéter de hemodiálisis sin túnel ni manguito, colocado en yugular interna o femoral para un acceso urgente y corto. Su uso debe limitarse en el tiempo por el riesgo de infección y de disfunción.", "manejo": [], "claves": [], "ref": ""},
 {"id": "cvc-tunelizado", "title": "Catéter venoso central permanente (tunelizado)", "aka": "catheter permanente tunelizado cuff permcath hemodialisis bacteriemia sellado antibiotico disfuncion fibrinolisis estenosis venosa central", "sum": "Acceso prolongado con túnel y manguito: técnica, infección y disfunción.", "cat": 7, "concept": "Catéter con túnel subcutáneo y manguito, para uso prolongado cuando no es posible una fístula o mientras esta madura. Es preferible al no tunelizado, pero según la guía española no es una alternativa aceptable a la fístula si esta es posible.", "manejo": [], "claves": [], "ref": ""},
@@ -2036,6 +2040,7 @@ function render() {
   if (state.mode === "guardia") { renderGuardia(); return; }
   if (state.mode === "casos") { renderCasos(); return; }
   if (state.mode === "dial") { renderDial(); return; }
+  if (state.mode === "calc" && !state.open) { renderCalc(); return; }
   if (state.mode === "farm") { renderFarm(); return; }
   var q = $("#q");
   $("#clear").hidden = !q.value;
@@ -2828,11 +2833,11 @@ function renderFarm() {
 
 function applyMode() {
   syncMast();
-  var casos = state.mode === "casos" || state.mode === "guardia", dial = state.mode === "dial", farm = state.mode === "farm";
+  var casos = state.mode === "casos" || state.mode === "guardia", dial = state.mode === "dial" || state.mode === "calc", farm = state.mode === "farm";
   $(".searchbar").hidden = casos || dial || farm;
   $("#chips").hidden = casos || dial || farm;
   document.querySelectorAll(".tab").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === state.mode)); });
-  $("#meta").textContent = state.mode === "guardia" ? "Caso clínico · informe PDF" : farm ? DRUGS.length + " fármacos · rev. oct 2026" : dial ? "Kt/V · KDOQI 2015" : casos ? CASES.length + " casos · rev. oct 2026" : DATA.length + " temas · rev. oct 2026";
+  $("#meta").textContent = state.mode === "guardia" ? "Caso clínico · informe PDF" : farm ? DRUGS.length + " fármacos · rev. oct 2026" : state.mode === "calc" ? "Calculadoras · fórmulas publicadas" : dial ? "Kt/V · KDOQI 2015" : casos ? CASES.length + " casos · rev. oct 2026" : DATA.length + " temas · rev. oct 2026";
 }
 
 (function initSample() {
@@ -2909,6 +2914,7 @@ try {
   if (h === "guardia") state.mode = "guardia";
   else if (h === "casos") state.mode = "casos";
   else if (h === "dialisis") state.mode = "dial";
+  else if (h === "calculadoras") state.mode = "calc";
   else if (h === "farmacos") state.mode = "farm";
   else if (h && DATA.some(function (t) { return t.id === h; })) state.open = h;
 } catch (err) {}
@@ -3036,7 +3042,7 @@ try {
 /* calc_engine */
 (function () {
   var UNITS = [["Creatinina", "mg/dL", "µmol/L", 88.4], ["Nitrógeno ureico (BUN)", "mg/dL", "urea mmol/L", 0.357], ["Urea", "mg/dL", "mmol/L", 0.1665], ["Glucosa", "mg/dL", "mmol/L", 0.0555], ["Calcio total", "mg/dL", "mmol/L", 0.2495], ["Magnesio", "mg/dL", "mmol/L", 0.4114], ["Fósforo", "mg/dL", "mmol/L", 0.3229], ["Ácido úrico", "mg/dL", "µmol/L", 59.48], ["Albúmina", "g/dL", "g/L", 10], ["Hemoglobina", "g/dL", "g/L", 10], ["Colesterol", "mg/dL", "mmol/L", 0.02586], ["Triglicéridos", "mg/dL", "mmol/L", 0.01129], ["Albúmina/creatinina urinaria", "mg/g", "mg/mmol", 0.113], ["Sodio y potasio", "mEq/L", "mmol/L", 1], ["Peso", "lb", "kg", 0.4536]];
-  function V(b, k) { var e = b.querySelector('[data-k="' + k + '"]'); if (!e) return NaN; var s = String(e.value).replace(",", ".").trim(); return s === "" ? NaN : parseFloat(s); }
+  function V(b, k) { var e = b.querySelector('[data-k="' + k + '"]'); if (!e) return NaN; var s = String(e.value).replace(",", ".").trim(); if (s === "") return NaN; var v = parseFloat(s), uf = e.getAttribute("data-uf"); if (uf && e.getAttribute("data-si") === "1") v = v * parseFloat(uf); return v; }
   function S(b, k) { var e = b.querySelector('[data-k="' + k + '"]'); return e ? e.value : ""; }
   function fx(x, d) { return (Math.round(x * Math.pow(10, d)) / Math.pow(10, d)).toString().replace(".", ","); }
   function li(a) { return "<ul>" + a.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul>"; }
@@ -3965,7 +3971,7 @@ try {
 /* home_engine */
 (function () {
   var GR = [
-    { k: "clin", n: "Nefrología clínica", d: "LRA y ERC, glomerulopatías, hipertensión, litiasis, pediatría, anemia, calculadoras y más", img: "14", cats: [1, 2, 14, 3, 10, 11, 13, 5, 15, 20, 19, 4, 16, 6] },
+    { k: "clin", n: "Nefrología clínica", d: "LRA y ERC, glomerulopatías, hipertensión, litiasis, pediatría, anemia y más", img: "14", cats: [1, 2, 14, 3, 10, 11, 13, 5, 15, 20, 19, 4] },
     { k: "tx", n: "Trasplante renal", d: "Inmunosupresión, rechazo, disfunción del injerto e infecciones (CMV, BK)", img: "9", cats: [9] },
     { k: "dial", n: "Diálisis", d: "Hemodiálisis, diálisis peritoneal, accesos, peritonitis y terapia renal en UCI", img: "17", cats: [17, 18] },
     { k: "elec", n: "Líquidos, electrolitos y ácido-base", d: "Potasio, sodio, calcio, gasometría, acidosis y alcalosis", img: "12", cats: [0, 12] }
@@ -4848,6 +4854,114 @@ render();
   render();
 })();
 /*ENDPALBJS*/
+/*CALC*/
+var CALQ = { v: {} };
+(function () {
+  function num(id) { var x = String(CALQ.v[id] == null ? "" : CALQ.v[id]).replace(",", "."); if (x === "") return NaN; return parseFloat(x); }
+  function f(n, d) { return isFinite(n) ? n.toFixed(d == null ? 1 : d).replace(".", ",") : "—"; }
+  function inp(id, label, unit, ph) {
+    return '<label class="hd-f"><span>' + label + (unit ? ' <i>(' + unit + ')</i>' : '') + '</span><input type="text" inputmode="decimal" autocomplete="off" data-cc="' + id + '" value="' + (CALQ.v[id] == null ? "" : String(CALQ.v[id]).replace(/"/g, "")) + '"' + (ph ? ' placeholder="' + ph + '"' : '') + '></label>';
+  }
+  function sel(id, label, opts) {
+    var cur = CALQ.v[id] || opts[0][0];
+    return '<label class="hd-f"><span>' + label + '</span><select data-cc="' + id + '">' + opts.map(function (o) { return '<option value="' + o[0] + '"' + (cur === o[0] ? " selected" : "") + '>' + o[1] + '</option>'; }).join("") + '</select></label>';
+  }
+  function row(k, v, note) { return '<li><b>' + k + ':</b> ' + v + (note ? ' <span class="hd-note">' + note + '</span>' : '') + '</li>'; }
+  function need(t) { return '<p class="hd-note">' + t + '</p>'; }
+  function sec(id, title, body, src) {
+    return '<details class="hd-card acc calc-s" id="cs-' + id + '"' + (id === "ab" ? "" : "") + '><summary><span class="acc-t"><b class="fm-h">' + title + '</b></span></summary><div class="hd-grid">' + body + '</div><div class="calc-out" id="co-' + id + '"></div><p class="hd-note">' + src + '</p></details>';
+  }
+  var sx = [["F", "Mujer"], ["M", "Hombre"]];
+  function out_ab() {
+    var na = num("a_na"), cl = num("a_cl"), hc = num("a_hc"), alb = num("a_alb"), pco = num("a_pco"), glu = num("a_glu"), bun = num("a_bun");
+    if (CALQ.v.a_albu === "si") alb = alb / 10;
+    if (CALQ.v.a_pcou === "si") pco = pco * 7.5006;
+    if (CALQ.v.a_gluu === "si") glu = glu * 18.016;
+    if (CALQ.v.a_bunu === "si") bun = bun * 2.801;
+    if (!isFinite(na) || !isFinite(cl) || !isFinite(hc)) return need("Introduce Na, Cl y HCO₃ (mEq/L).");
+    var ag = na - cl - hc, h = '<ul class="hd-kv">' + row("Brecha aniónica", '<b>' + f(ag, 1) + '</b> mEq/L', "valor habitual ~8-12 según el método del laboratorio");
+    var agc = ag;
+    if (isFinite(alb)) { agc = ag + 2.5 * (4 - alb); h += row("Brecha corregida por albúmina", '<b>' + f(agc, 1) + '</b>', "+2,5 por cada 1 g/dL de albúmina bajo 4,0"); }
+    if (agc > 12) {
+      var dag = agc - 12, dhc = 24 - hc, r = dhc !== 0 ? dag / dhc : NaN;
+      var it = !isFinite(r) ? "" : r < 0.4 ? "acidosis de brecha normal asociada" : r < 1 ? "trastorno mixto (brecha alta + normal)" : r <= 2 ? "acidosis de brecha alta pura" : "alcalosis metabólica concomitante";
+      h += row("Delta-delta (ΔAG/ΔHCO₃)", '<b>' + f(r, 2) + '</b>', it);
+    }
+    if (isFinite(pco)) {
+      var ex = 1.5 * hc + 8;
+      var iv = pco > ex + 2 ? "pCO₂ mayor de lo esperado: acidosis respiratoria añadida" : pco < ex - 2 ? "pCO₂ menor de lo esperado: alcalosis respiratoria añadida" : "compensación adecuada";
+      h += row("Fórmula de Winter (si hay acidosis metabólica)", 'pCO₂ esperada <b>' + f(ex - 2, 0) + '-' + f(ex + 2, 0) + ' mmHg</b>', iv);
+    }
+    if (isFinite(glu) && isFinite(bun)) h += row("Osmolaridad calculada", '<b>' + f(2 * na + glu / 18 + bun / 2.8, 0) + ' mOsm/kg</b>', "2·Na + glucosa/18 + BUN/2,8. Compárala con la medida para la brecha osmolar");
+    return h + '</ul>';
+  }
+  var OUT = { ab: out_ab };
+  window.calcUpdateAll = function () { Object.keys(OUT).forEach(function (k) { var e = document.getElementById("co-" + k); if (e) e.innerHTML = OUT[k](); }); };
+  var CALC_IDS = ["calc-tfg", "calc-electrolitos", "calc-fe", "calc-hd", "calc-dosis", "calc-unidades"];
+  window.renderCalc = function () {
+    var cards = CALC_IDS.map(function (id) {
+      var t = DATA.filter(function (x) { return x.id === id; })[0]; if (!t) return "";
+      return '<button class="row" type="button" data-ct="' + id + '"><span class="row-main"><span class="row-title">' + esc(t.title) + '</span><span class="row-sum">' + esc(t.sum || "") + '</span></span><span class="row-go" aria-hidden="true">›</span></button>';
+    }).join("");
+    var h = '<article class="detail"><div class="cat">Calculadoras</div><h1>Cálculos rápidos de uso diario</h1>' +
+      '<p class="intro">Elige una calculadora. Las que usan creatinina, glucosa, calcio, urea o albúmina permiten escribir en mg/dL o en unidades del SI (mmol/L, µmol/L, g/L). Apoyo a la decisión: no sustituyen el juicio clínico.</p>' +
+      '<div class="list">' + cards + '</div>' +
+      '<div class="dactions"><button class="btn ghost" type="button" id="cc-clear">Borrar datos del ácido-base</button></div>' +
+      sec("ab", "Ácido-base: brecha aniónica, delta-delta y Winter",
+        inp("a_na", "Sodio", "mEq/L") + inp("a_cl", "Cloro", "mEq/L") + inp("a_hc", "Bicarbonato", "mEq/L") + inp("a_alb", "Albúmina (opcional)", "") + sel("a_albu", "Unidad de albúmina", [["c", "g/dL"], ["si", "g/L"]]) + inp("a_pco", "pCO₂ (opcional)", "") + sel("a_pcou", "Unidad de pCO₂", [["c", "mmHg"], ["si", "kPa"]]) + inp("a_glu", "Glucemia (opcional)", "") + sel("a_gluu", "Unidad de glucemia", [["c", "mg/dL"], ["si", "mmol/L"]]) + inp("a_bun", "BUN o urea (opcional)", "") + sel("a_bunu", "Unidad", [["c", "BUN mg/dL"], ["si", "urea mmol/L"]]),
+        "Brecha = Na − Cl − HCO₃. Corrección de albúmina: +2,5 por g/dL bajo 4,0 (Figge usa 4,4); si escribes en g/L, la app convierte. Winter: pCO₂ = 1,5 × HCO₃ + 8 ± 2. Fórmulas clásicas; no verificadas en una guía de este mes.") +
+      '</article>';
+    $("#view").innerHTML = h;
+    calcUpdateAll();
+  };
+  $("#view").addEventListener("click", function (e) {
+    var c = state.mode === "calc" && e.target.closest("[data-ct]");
+    if (c) openTopic(c.getAttribute("data-ct"));
+  });
+  $("#view").addEventListener("input", function (e) {
+    if (state.mode !== "calc") return;
+    var id = e.target.getAttribute && e.target.getAttribute("data-cc"); if (!id) return;
+    CALQ.v[id] = e.target.value; calcUpdateAll();
+  });
+  $("#view").addEventListener("change", function (e) {
+    if (state.mode !== "calc") return;
+    var id = e.target.getAttribute && e.target.getAttribute("data-cc"); if (!id) return;
+    CALQ.v[id] = e.target.value; calcUpdateAll();
+  });
+  $("#view").addEventListener("click", function (e) {
+    if (state.mode === "calc" && e.target.closest("#cc-clear")) { CALQ.v = {}; renderCalc(); }
+  });
+})();
+  var _ot = openTopic;
+  openTopic = function (id) {
+    if (/^calc-/.test(id) && state.mode !== "calc") { state.mode = "calc"; applyMode(); }
+    return _ot.apply(this, arguments);
+  };
+  var _rd = renderDetail;
+  renderDetail = function (t) {
+    _rd.apply(this, arguments);
+    if (state.mode === "calc") { var bb = document.getElementById("back"); if (bb) bb.textContent = "← Calculadoras"; }
+  };
+/*ENDCALC*/
+
+/*UNISEL*/
+(function () {
+  var F = { glu: ["mg/dL", "mmol/L", 18.016], ca: ["mg/dL", "mmol/L", 4.008], alb: ["g/dL", "g/L", 0.1], bun: ["mg/dL", "urea mmol/L", 2.801], pre: ["mg/dL", "urea mmol/L", 2.801], post: ["mg/dL", "urea mmol/L", 2.801], pur: ["mg/dL", "mmol/L", 6.006], uur: ["mg/dL", "mmol/L", 6.006], pcr: ["mg/dL", "µmol/L", 0.011312], ucr: ["mg/dL", "µmol/L", 0.011312], hb: ["g/dL", "g/L", 0.1], hbt: ["g/dL", "g/L", 0.1] };
+  function add() {
+    document.querySelectorAll('.calcbox:not([data-calc="units"]) input[data-k]').forEach(function (i) {
+      var k = i.getAttribute("data-k"), f = F[k]; if (!f || i.getAttribute("data-uf")) return;
+      var sm = i.nextElementSibling; if (!sm || sm.tagName !== "SMALL" || sm.textContent.trim() !== f[0]) return;
+      i.setAttribute("data-uf", String(f[2]));
+      var s = document.createElement("select"); s.className = "uni"; s.setAttribute("aria-label", "Unidad");
+      s.innerHTML = '<option value="c">' + f[0] + '</option><option value="si">' + f[1] + '</option>';
+      s.addEventListener("change", function () { i.setAttribute("data-si", s.value === "si" ? "1" : ""); i.placeholder = s.value === "si" ? "" : i.placeholder; });
+      sm.replaceWith(s);
+    });
+  }
+  new MutationObserver(add).observe(document.body, { childList: true, subtree: true });
+  add();
+})();
+/*ENDUNISEL*/
 /*BACKNAV*/
 (function () {
   var cur = null, popping = false;
