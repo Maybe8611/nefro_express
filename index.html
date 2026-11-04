@@ -288,7 +288,7 @@ body { padding-bottom: 84px; }
 .mast .slogan, .mast .meta { display: none; }
 .mark { width: 48px; height: 30px; }
 .mast .brand { font-size: 1.5rem; }
-.mast .tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; overflow: visible; background: var(--surface); border-top: 1px solid var(--line); padding: 6px max(8px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); box-shadow: 0 -4px 14px rgba(0,0,0,.06); }
+.mast .tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; margin: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; overflow: visible; background: var(--surface); border-top: 1px solid var(--line); padding: 6px max(8px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); box-shadow: 0 -4px 14px rgba(0,0,0,.06); }
 .mast .tab, .mast .tab[aria-pressed="true"], .mast .tab[data-mode="farm"] { flex: none; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 6px 2px; border-radius: 10px; background: none; border: 0; color: var(--muted); font-size: 0.72rem; font-weight: 600; line-height: 1.15; text-align: center; white-space: normal; }
 .mast .tab::before, .mast .tab::after, .mast .tab:last-child::after, .mast .tab[data-mode="farm"]::after, .mast .tab[data-mode="dial"]::after { display: none; content: none; }
 .mast .tab svg { width: 24px; height: 24px; }
@@ -698,6 +698,24 @@ html.home-navy footer a, html.home-navy .about summary{color:#F5C84C}
 .hm td,.hm th{text-align:center}.hm .g{background:rgba(46,160,90,.22)}.hm .y{background:rgba(230,190,40,.28)}.hm .o{background:rgba(235,130,40,.30)}.hm .r{background:rgba(210,60,60,.30)}
 .hm td.l{text-align:left;font-weight:600}
 
+/*LBPCSS*/
+.lbp-r { box-sizing: border-box; max-width: 100%; overflow: hidden; display: grid; grid-template-columns: 1fr; gap: 6px; padding: 10px 12px; margin: 8px 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.lbp-n { font-weight: 700; color: var(--ink, inherit); }
+.lbp-i { display: flex; gap: 8px; align-items: center; }
+.lbp-i input { flex: 0 0 38%; width: 38%; box-sizing: border-box; min-width: 0; font: inherit; padding: 9px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg, #fff); color: inherit; }
+.lbp-i select { flex: 1 1 0; width: 0; box-sizing: border-box; min-width: 0; font: inherit; padding: 9px 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg, #fff); color: inherit; }
+.lbp-u { font-size: .85rem; opacity: .75; }
+.lbp-f { min-height: 0; font-size: .9rem; }
+.lbp-f.ok { color: var(--gc); } .lbp-f.bad { color: var(--gc); }
+.lbp-go, .lbp-chip { font: inherit; font-size: .85rem; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--gc, var(--line)); background: transparent; color: inherit; cursor: pointer; }
+.lbp-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+/*ENDLBPCSS*/
+/*LBSCSS*/
+.lb-sec { margin: 16px 0; padding: 4px 0 4px 12px; border-left: 5px solid var(--lc); }
+.lb-sec h2 { margin: 0 0 2px; font-size: 1.05rem; color: var(--lc); }
+.lb-sd { margin: 0 0 8px; font-size: .88rem; opacity: .8; }
+.lb-sec .list .row { border-left: 4px solid var(--lc); }
+/*ENDLBSCSS*/
 </style>
 <style id="gd-print-css">.rp{font-family:"Helvetica Neue",Arial,sans-serif;color:#1f2933;background:#fff;font-size:9.5pt;line-height:1.45;max-width:190mm}
 .rp *{box-sizing:border-box}
@@ -873,6 +891,17 @@ html.home-navy .golink.gl8[class]>span{border-left-color:rgb(30,150,100)!importa
 :root[data-theme="light"] #homebtn i { border-color:#fff!important; }
 :root[data-theme="light"] footer a, :root[data-theme="light"] .about summary { color:#0B7F88; }
 /*ENDPALB*/
+/*GRCSS*/
+.gr{display:grid;gap:8px;margin:8px 0 12px}
+.gr-r{display:grid;grid-template-columns:5.6rem 1fr;gap:10px;align-items:start;padding:9px 12px 9px 11px;border-radius:12px;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--gc)}
+.gr-k{font-weight:800;font-size:.95rem;line-height:1.25;color:var(--ink)}
+.gr-v{line-height:1.45;min-width:0;overflow-wrap:anywhere}
+.gr-l{font-weight:700;color:var(--muted)}
+.gr-h{margin:14px 0 4px;font-weight:700;font-size:.88rem;color:var(--muted);letter-spacing:.01em}
+.gr-n{margin:6px 0;color:var(--muted);font-size:.9rem;line-height:1.45}
+@media (max-width:380px){.gr-r{grid-template-columns:4.6rem 1fr}}
+.gr.st .gr-r{grid-template-columns:1fr;gap:4px}
+/*ENDGRCSS*/
 /*HDRNEW*/
 .mast:not(.full){background:#EBF6F3!important;border:1px solid #CFE6E0!important;box-shadow:none!important;padding:0!important;border-radius:16px!important;overflow:hidden}
 .mast:not(.full) .bar{height:auto;margin:0 auto;width:74%;max-width:100%;border-radius:12px;display:block}
@@ -893,6 +922,7 @@ html.home-navy .golink.gl8[class]>span{border-left-color:rgb(30,150,100)!importa
       <button class="tab" type="button" data-mode="temas" aria-pressed="true" title="Temas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5z M8 10h8 M8 14h8 M8 18h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Temas</span></button>
       <button class="tab" type="button" data-mode="guardia" aria-pressed="false" title="Modo guardia: discutir un caso"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><span>Guardia</span></button>
       <button class="tab" type="button" data-mode="calc" aria-pressed="false" title="Calculadoras"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 7h8M8 12h2M12 12h2M16 12h0M8 16h2M12 16h2M16 16h0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Calcular</span></button>
+      <button class="tab" type="button" data-mode="lab" aria-pressed="false" title="Laboratorio: interpretar un resultado"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 15h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Labs</span></button>
       <button class="tab" type="button" data-mode="dial" aria-pressed="false" title="Diálisis: Kt/V y prescripción"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Diálisis</span></button>
       <button class="tab" type="button" data-mode="farm" aria-pressed="false" title="Ajustes de fármacos en enfermedad renal crónica"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="7" rx="3.5" transform="rotate(-35 12 12.5)" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 8.5l5 7" stroke="currentColor" stroke-width="1.8"/></svg><span>Fármacos</span></button>
     </div>
@@ -923,7 +953,7 @@ html.home-navy .golink.gl8[class]>span{border-left-color:rgb(30,150,100)!importa
         <p><b>¿Encontraste un error?</b> Avisa a quien te compartió la guía, indicando el tema y el dato.</p>
       </div>
     </details>
-<p class="nxver" style="margin:10px 0 0;font-size:.74rem;opacity:.75">Versión de la app: 4 nov 2026 · calculadoras unidas en «Calcular», con mg/dL y mmol/L; infusiones (furosemida, noradrenalina, heparina) y goteo; sin déficit de hierro</p>
+<p class="nxver" style="margin:10px 0 0;font-size:.74rem;opacity:.75">Versión de la app: 4 nov 2026 · pestaña Labs más limpia, urgencia hipertensiva, infección del catéter de HD, infecciones urinarias en ERC y trasplante, vacunas y tratamiento conservador nuevos, clasificaciones en cuadros, calculadoras unidas en «Calcular», con mg/dL y mmol/L; infusiones (furosemida, noradrenalina, heparina) y goteo; sin déficit de hierro</p>
   </footer>
 </div>
 
@@ -1359,6 +1389,193 @@ var DATA = [
   ],
   alert: "Paciente con iSGLT2 que llega a cirugía urgente o en ayuno prolongado: pedir cetonas y gasometría aunque la glucemia sea normal (cetoacidosis euglucémica).",
   ref: "Consenso ACR-NKF 2020; ACR Manual on Contrast Media 2023 y ficha FDA de metformina (vía revisión secundaria); FDA 2020, aviso sobre iSGLT2 (vía MDedge); ESC/ESA 2014 y CCS citados en un protocolo de ensayo. Confirmar con la política del hospital"
+},
+{
+  id: "cuidados-conservadores", cat: 1, title: "Tratamiento conservador y cuidados paliativos en ERC avanzada",
+  aka: "conservador paliativo no dializar suspender dialisis retirar dialisis ensayo tiempo limitado prurito dolor nauseas piernas inquietas agitacion fin de vida voluntades anticipadas",
+  sum: "Decidir con el paciente, ensayo de diálisis por tiempo limitado y control de síntomas.",
+  concept: "El tratamiento conservador es una opción activa para pacientes con ERC avanzada que no desean la diálisis o no se benefician de ella: se mantienen los cuidados médicos y se controlan los síntomas, sin diálisis. Aquí se reúnen las recomendaciones de la guía de la Renal Physicians Association para decidir y dosis de una guía local del NHS para los síntomas.",
+  manejo: [
+    "§1. Decidir con el paciente (guía RPA 2010, adultos)",
+    "Dar a todo paciente con LRA, ERC estadio 5 o ERT una estimación de pronóstico propia de su situación.",
+    "Iniciar la planificación anticipada de cuidados y tratar de obtener voluntades anticipadas escritas de todos los pacientes en diálisis.",
+    "Considerar no iniciar o retirar la diálisis cuando un paciente con capacidad la rechaza, y considerar no dializar cuando el pronóstico es muy malo.",
+    "Considerar un <b>ensayo de diálisis por tiempo limitado</b> cuando se necesita diálisis pero el pronóstico es incierto.",
+    "Si hay desacuerdo sobre la decisión, usar un proceso sistemático de resolución de conflictos.",
+    "§2. Control de síntomas",
+    "Las dosis por síntoma están en la sección «Síntomas y fármacos» de este tema."
+  ],
+  claves: [
+    "La guía local advierte de evitar opioides orales de liberación lenta y parches de fentanilo en pacientes sin opioides previos, por riesgo de acumulación; los AINE solo tras hablar de riesgos y beneficios.",
+    "Antes de atribuir una agitación a la fase terminal, descartar causas reversibles: sepsis, retención urinaria, efectos de fármacos y toxicidad por opioides.",
+    "Con sobrecarga de volumen y disnea, la misma guía contempla furosemida oral hasta 240 mg/24 h y añadir metolazona.",
+    "No verificado en esta revisión: herramientas pronósticas, dosis de fin de vida por jeringa subcutánea, hipo, depresión y ansiedad."
+  ],
+  alert: "Retirar o no iniciar diálisis es una decisión compartida y documentada: pronóstico, voluntades anticipadas y, si hay duda, un ensayo por tiempo limitado.",
+  ref: "RPA 2010 (Shared Decision-Making in the Appropriate Initiation of and Withdrawal from Dialysis, recomendaciones de adultos, leídas en copia del documento); guía de control de síntomas en ERC estadio 5 del NHS North East London ICB / Barts Health, 2023 (guía local del Reino Unido: confirmar dosis con tu formulario)"
+},
+{
+  id: "vacunas-erc", cat: 1, title: "Vacunas en ERC, diálisis y trasplante",
+  aka: "vacunas vacunacion hepatitis b influenza neumococo zoster shingrix varicela triple viral sarampion covid vsr vph tdap vivas trasplante dialisis anti-hbs",
+  sum: "Qué vacunar, qué vacunas vivas evitar y cómo controlar la hepatitis B.",
+  concept: "Los pacientes con ERC avanzada, en diálisis o con trasplante tienen más riesgo de infecciones y responden peor a las vacunas. Conviene vacunar lo antes posible, antes de empezar diálisis o de recibir el trasplante, y no dar vacunas vivas después del trasplante. Las recomendaciones de EE. UU. (CDC/NKF) y del Reino Unido (UKKA) no coinciden del todo; sigue el programa de tu país.",
+  manejo: [
+    "§1. Principios",
+    "Vacunar apenas se prevea la hemodiálisis o el trasplante (UKKA).",
+    "La diálisis y los inmunosupresores reducen la respuesta: algunos pacientes necesitan dosis más altas o adicionales (NKF).",
+    "Pacientes sin inmunidad a varicela o sarampión: vacunarlos <b>antes</b> del trasplante; después del trasplante no se dan vacunas vivas (UKKA, NKF).",
+    "Contactos del paciente trasplantado: evitar la vacuna nasal de la gripe, la polio oral y la de viruela (NKF).",
+    "§2. Hepatitis B en diálisis",
+    "Usar la formulación de alta dosis para diálisis (Recombivax HB de 40 µg/mL en el resumen del ACIP de 2006). Si se empezó con dosis estándar antes de entrar en hemodiálisis, completar con la dosis de diálisis; si se dio una dosis menor de la recomendada, repetirla.",
+    "Medir anti-HBs 1 a 2 meses después de la última dosis. Mayor de <code>10 mUI/mL</code> es protector.",
+    "Si es ≤10 mUI/mL: tres dosis más en un esquema adecuado y repetir anti-HBs 1 a 2 meses después. Si sigue sin respuesta, buscar HBsAg; si es negativo, considerarlo susceptible y usar inmunoglobulina tras una exposición conocida o probable.",
+    "Anti-HBs cada año y refuerzo si baja a ≤10 mUI/mL (ACIP 2006; UKKA coincide en el umbral y en el control anual)."
+  ],
+  claves: [
+    "El calendario por vacuna está en la sección «Por vacuna». Las fuentes difieren en edades y refuerzos: confirma con el programa de tu país.",
+    "No verificado en esta revisión: dosis y esquema de Engerix-B en diálisis, hepatitis A, meningococo, Hib, el intervalo exacto entre una vacuna viva y el trasplante, y las dosis de refuerzo de COVID-19 más allá de «puede necesitar más de una».",
+    "Resumen del ACIP citado es de 2006 y no incluye a pacientes con trasplante reciente."
+  ],
+  alert: "Después del trasplante no se dan vacunas vivas (varicela, SRP, gripe nasal): vacunar antes si el paciente no tiene inmunidad.",
+  ref: "NKF, «Vaccines for Adults with Advanced CKD, Kidney Failure, or Kidney Transplant» (basada en el calendario CDC, octubre 2025); CDC/ACIP, guía de hepatitis B en diálisis (2006, copia archivada); UK Kidney Association, información sobre vacunas (UKRPG, 2026). Confirmar con el calendario nacional"
+},
+{
+  id: "itu-erc", cat: 1, title: "Infecciones urinarias en ERC (adultos)",
+  aka: "itu infeccion urinaria erc cistitis pielonefritis nitrofurantoina fosfomicina trimetoprima pivmecilinam bacteriuria asintomatica antibiotico ajuste renal",
+  sum: "Qué antibiótico usar según la TFGe, qué evitar y cuánto durar; no tratar la bacteriuria asintomática.",
+  concept: "En ERC la elección del antibiótico depende de la TFGe y de si la infección es baja (cistitis) o alta (fiebre, dolor lumbar, sepsis). Reúno lo que pude contrastar con MHRA, la guía IDSA 2025 de ITU complicada y un protocolo clínico británico para ITU baja en ERC; lo demás va marcado como no verificado.",
+  manejo: [
+    "§1. Primero: ¿baja o alta?",
+    "Cistitis sin fiebre ni dolor lumbar: tratamiento oral corto según la TFGe (sección 2). Fiebre, escalofríos, dolor lumbar, sepsis, obstrucción, catéter, nefrostomía o stent: ITU complicada, va a la sección 3.",
+    "Pedir urocultivo antes del antibiótico siempre que haya ERC. En el hombre, pensar también en prostatitis.",
+    "Bacteriuria asintomática: no se trata (MHRA), salvo embarazo y situaciones especiales.",
+    "§2. Cistitis en ERC, por TFGe (protocolo Derbyshire, no embarazadas, sin sonda)",
+    "TFGe 45–59: nitrofurantoína 100 mg de liberación modificada cada 12 h (3 días en mujer, 7 en hombre). Alternativas: pivmecilinam, fosfomicina, trimetoprima.",
+    "TFGe 30–44: pivmecilinam 400 mg una vez y luego 200 mg cada 8 h (3 días en mujer, 7 en hombre). Alternativas: fosfomicina 3 g; trimetoprima 200 mg cada 12 h solo en mujer.",
+    "TFGe <30: pivmecilinam igual que arriba. Alternativas: fosfomicina 3 g; ciprofloxacino 500 mg cada 12 h como último recurso.",
+    "Hombre: fosfomicina 3 g cada 2 días × 3 dosis (TFGe 45–59) o cada 3 días × 2 dosis (TFGe <45). Su uso en hombre no está autorizado.",
+    "§3. ITU alta o complicada (IDSA 2025)",
+    "Sin sepsis: cefalosporina de 3.ª o 4.ª generación, piperacilina-tazobactam o fluoroquinolona. Con sepsis: esas mismas más carbapenem.",
+    "Evitar fluoroquinolona si se usó en los últimos 12 meses o si antes se aisló un germen resistente a ella. Elegir según urocultivos previos.",
+    "Pasar a vía oral cuando el paciente mejora y tolera; estrechar según antibiograma.",
+    "Duración: 7 días en general; con fluoroquinolona 5–7 días. Bacteriemia por gramnegativo: 7 días. Hombre con prostatitis aguda sospechada: 10–14 días (evidencia escasa).",
+    "No usar nitrofurantoína ni fosfomicina oral en ITU alta o bacteriemia: no alcanzan niveles en parénquima ni sangre.",
+    "No verificado aquí: dosis de los antibióticos intravenosos ajustadas a la TFGe. Usar la ficha o el protocolo del hospital."
+  ],
+  claves: [
+    "Nitrofurantoína: contraindicada con TFGe <45 (antes era aclaramiento <60). Con TFGe 30–44 solo 3–7 días, para ITU baja por germen multirresistente y si el beneficio supera el riesgo. Nunca en ITU alta ni sepsis.",
+    "Fosfomicina: no usarla con TFGe <10 ni en diálisis.",
+    "Trimetoprima: evitar con IECA, ARA II o espironolactona por hiperpotasemia. El protocolo acepta un ciclo de 3 días en mujer con TFGe 45–59. Usar solo con antibiograma, por resistencia elevada.",
+    "Pivmecilinam: penicilina, no en alergia. Solo para cistitis sin síntomas sistémicos; con muy poca función renal puede fallar; en diálisis, consultar primero. Puede no estar disponible en todos los países.",
+    "Ciprofloxacino: riesgo importante de Clostridioides difficile; si TFGe 10–30 no pasar de 500 mg cada 12 h.",
+    "Trasplante, diálisis o TFGe <10: ver el tema de trasplante y la ficha del fármaco; el protocolo británico pide consultar en esos casos."
+  ],
+  alert: "Fiebre o dolor lumbar con ERC: no tratar como cistitis. Descartar obstrucción con ecografía y pedir hemocultivos.",
+  ref: "MHRA, Drug Safety Update: nitrofurantoína contraindicada con TFGe <45; Derbyshire JAPC, Manejo de ITU baja en ERC (actualizado 2022); IDSA 2025, guía de ITU complicada (vía resumen de emDocs; la guía completa no se pudo abrir)"
+},
+{
+  id: "itu-trasplante", cat: 9, title: "Infecciones urinarias en trasplante renal",
+  aka: "itu trasplante renal infeccion urinaria bacteriuria asintomatica pielonefritis stent catéter profilaxis trimetoprima sulfametoxazol recurrente injerto",
+  sum: "Cuándo no tratar la bacteriuria, cuánto dura el tratamiento y cómo prevenir recaídas.",
+  concept: "Resumo la guía de la AST (sociedad americana de trasplante), consenso de infecciosas, sobre ITU en trasplantados de órgano sólido. Lo no encontrado en la fuente va marcado como no verificado.",
+  manejo: [
+    "§1. Bacteriuria asintomática",
+    "En trasplantado renal asintomático con más de 2 meses del trasplante: no cultivar ni tratar de rutina.",
+    "Si sale un cultivo positivo en cualquier momento: repetirlo antes de decidir. Si se negativiza o cambia el germen, observar sin tratar.",
+    "Considerar tratar la bacteriuria persistente solo si hay un aumento de creatinina sin otra causa (recomendación débil).",
+    "Bacteriuria por germen multirresistente: no tratar.",
+    "No verificado en esta revisión: qué hacer con bacteriuria en los primeros 2 meses.",
+    "§2. ITU sintomática",
+    "Cistitis simple: 5–10 días. No se recomiendan dosis única ni 3 días.",
+    "Pielonefritis o ITU complicada: 14–21 días con un antibiótico de espectro estrecho elegido por antibiograma. Si hay absceso, alargar hasta que esté bien drenado.",
+    "Con sonda puesta más de 2 semanas y sospecha de ITU: retirar la sonda y tomar un cultivo nuevo.",
+    "ITU grave entre la semana 2 y la 4 del trasplante: considerar retirar el stent antes, pesando el riesgo urológico.",
+    "No verificado aquí: antibiótico empírico concreto y su dosis según la TFGe del injerto. Usar el antibiograma, la ficha del fármaco y la interacción con el inhibidor de calcineurina.",
+    "§3. Prevención",
+    "Sonda y stent: limitar su duración a las primeras 4 semanas.",
+    "Trimetoprima-sulfametoxazol por 6 meses (dada como profilaxis de Pneumocystis) reduce ITU y bacteriemia.",
+    "Si no se puede usar trimetoprima-sulfametoxazol, hay alternativas con pocos datos (nitrofurantoína, cefalexina, fluoroquinolona), limitadas al primer mes. La guía también desaconseja fluoroquinolonas por seguridad y resistencia, y la nitrofurantoína si la TFG es <60.",
+    "ITU recurrente: preferir medidas sin antibiótico. Considerar profilaxis antibiótica solo en recurrencias graves, como pielonefritis (recomendación débil).",
+    "Donante con cultivos positivos de orina o sangre: tratar los gérmenes hallados; también los del líquido de preservación si se cultivó."
+  ],
+  claves: [
+    "El error más común es tratar la bacteriuria asintomática: pasados 2 meses, no se trata aunque el injerto sea reciente.",
+    "Cistitis 5–10 días; pielonefritis 14–21 días: más largo que en ERC sin trasplante.",
+    "Creatinina que sube con urocultivo persistente y sin otra causa: único escenario donde la guía considera tratar bacteriuria.",
+    "Nitrofurantoína en trasplantado con TFG <60: evitar (AST); MHRA fija el límite en 45 para población general."
+  ],
+  alert: "Fiebre con disfunción del injerto: urocultivo, hemocultivos y ecografía del injerto para descartar obstrucción o absceso.",
+  ref: "AST Infectious Diseases Community of Practice, 2019: ITU en receptores de trasplante de órgano sólido (vía resumen de Guideline Central; el texto completo no se abrió)"
+},
+{
+  id: "hta-emergencia", cat: 10, title: "Urgencia y emergencia hipertensiva",
+  aka: "crisis hipertensiva emergencia urgencia hipertensiva nicardipino labetalol nitroprusiato clevidipino esmolol nitroglicerina bajar presion tiocianato daño organo diana",
+  sum: "Cuándo bajar la presión, cuánto y con qué infusión; qué cuidar en ERC.",
+  concept: "Emergencia: PAS ≥180 o PAD ≥120 mmHg con daño agudo de órgano diana (cerebro, corazón, riñón); requiere tratamiento IV en UCI. Urgencia: la misma cifra sin daño de órgano; no se baja de inmediato. Reúno lo que pude contrastar con el Manual Merck y una revisión del Mayo Clinic; lo demás va marcado como no verificado.",
+  manejo: [
+    "§1. Urgencia (sin daño de órgano)",
+    "No bajar la presión de inmediato. La causa más común es ansiedad: explicar y, si hace falta, un ansiolítico.",
+    "Si la presión sigue alta: iniciar dos antihipertensivos orales combinados y revisar pronto como paciente externo.",
+    "No usar nifedipino oral de acción corta: puede causar hipotensión aguda.",
+    "§2. Emergencia: cuánto bajar",
+    "Merck: bajar la presión arterial media (PAM) un 20–25 % en la primera hora (el texto dice también 1–2 h) y luego ajustar según síntomas. Mayo: bajar la PAS no más de un 25 % en la primera hora, o la PAM un 10 % en la primera hora y otro 10–15 % en las 2–4 h siguientes. No buscar presión normal de inmediato.",
+    "Excepciones con meta propia (Mayo): disección aórtica, FC <60 y PAS <120; hemorragia intracerebral PAS <140; ictus isquémico sin trombolisis <220/120; preeclampsia desde 160/110, bajando la PAM no más de un 25 % en 2 h. En ictus y hemorragia cerebral, bajar rápido puede dañar.",
+    "§3. Fármacos IV",
+    "Nicardipino en infusión: <code>5 mg/h</code>, subir <code>2,5 mg/h</code> cada 10 min, máximo <code>15 mg/h</code>.",
+    "Labetalol en bolo: <code>10–20 mg IV</code>; repetir o duplicar a los 10 min si no responde; máximo <code>80 mg</code> por dosis; si no se alcanza la meta tras <code>300 mg</code> en total, cambiar de fármaco.",
+    "Esmolol: bolo <code>500 µg/kg</code> y luego <code>50 µg/kg/min</code>; subir <code>25–50 µg/kg/min</code> cada 10 min con nuevo bolo; máximo <code>300 µg/kg/min</code>. Es el betabloqueante de la disección aórtica.",
+    "Clevidipino: acción de 1–2 min; su metabolismo no depende de la función renal ni hepática. Merck lo prefiere al nitroprusiato en la mayoría de las emergencias. No verificado: dosis.",
+    "Nitroglicerina: preferible en cardiopatía isquémica grave y en edema pulmonar. No verificado: dosis.",
+    "Hidralazina: indicada en eclampsia. Nitroprusiato: reservado cuando no hay alternativa. No verificado: dosis.",
+    "§4. Qué cuidar en ERC",
+    "Nitroprusiato: el cianuro se convierte en tiocianato, que se acumula más rápido con insuficiencia renal (3–6 días en lugar de más de 1 semana). Pedir tiocianato cada día desde el tercer día seguido y suspender con >12 mg/dL. Evitarlo si hay otra opción.",
+    "Nicardipino: puede reducir la TFG en insuficiencia renal. Vigilar creatinina y diuresis.",
+    "No verificado en esta revisión: dosis de infusión de labetalol, y qué fármaco elegir en diálisis."
+  ],
+  claves: [
+    "Cifra alta sin daño de órgano no es emergencia: no tratar el número.",
+    "Emergencia: bajar un 20–25 % en la primera hora, no a normal.",
+    "Con ERC: evitar nitroprusiato prolongado; el nicardipino puede bajar la TFG.",
+    "Labetalol no en asma, ni en insuficiencia cardiaca aguda; puede dar bloqueo cardiaco.",
+    "Nicardipino y labetalol no en insuficiencia cardiaca aguda (nicardipino, según Merck; labetalol solo en dosis bajas con nitroglicerina)."
+  ],
+  alert: "Presión muy alta con cefalea intensa, déficit neurológico, dolor torácico, disnea, creatinina que sube o hematuria: tratar como emergencia y buscar el órgano afectado.",
+  ref: "Manual Merck (profesional), emergencias hipertensivas; Mayo Clinic Emergency Medicine Journal Club, «Under Pressure» 2020 (dosis de nicardipino, labetalol y esmolol, metas de presión). Guías ACC/AHA y ESC no abiertas en esta revisión"
+},
+{
+  id: "bacteriemia-hd", cat: 17, title: "Infección del catéter de hemodiálisis (bacteriemia)",
+  aka: "bacteriemia catéter hemodiálisis infección cvc vancomicina cefazolina ceftazidima tobramicina sellado antibiótico lock cambio catéter staphylococcus aureus candida",
+  sum: "Antibiótico empírico a dosis de diálisis, duración por germen y cuándo retirar el catéter.",
+  concept: "Fiebre o escalofríos en un paciente con catéter de hemodiálisis: tomar hemocultivos y empezar antibiótico empírico, que se da al final de cada sesión. Resumo la guía práctica de la NKF (Vascular Access Initiative).",
+  manejo: [
+    "§1. Antibiótico empírico (al final de cada diálisis)",
+    "Gram positivo: <b>vancomicina</b> si hay alergia grave a betalactámicos o sospecha de SARM: carga <code>20–25 mg/kg</code> IV y luego <code>10–15 mg/kg</code>. Si no, <b>cefazolina</b> <code>2 g</code> IV.",
+    "Gram negativo: <b>ceftazidima</b> <code>1 g</code> IV si hay función renal residual importante o preocupa la ototoxicidad; si no, <b>tobramicina</b> carga <code>2 mg/kg</code> (máximo 100 mg) y luego <code>1 mg/kg</code>.",
+    "§2. Duración según el germen (ajustar al antibiograma)",
+    "Estafilococo coagulasa-negativo: <code>14 días</code>.",
+    "Staphylococcus aureus: <code>4–6 semanas</code>; ecocardiograma transtorácico, vigilar infección a distancia y retirar el catéter.",
+    "Gramnegativos: mínimo <code>14 días</code>; retirar el catéter.",
+    "Candida: mínimo <code>14 días</code>; retirar el catéter. Empírico: fluconazol o micafungina.",
+    "Cultivos sin crecimiento: suspender el antibiótico cuando un falso negativo sea poco probable (el antibiótico previo puede negativizarlos).",
+    "§3. ¿Cambiar o retirar el catéter?",
+    "Inestable pese a líquidos: dializar una vez por el mismo catéter, retirarlo y poner otro.",
+    "Pus en el orificio o infección del túnel: retirar y colocar otro en otro sitio lo antes posible.",
+    "Estable a las 48–72 h sin sepsis ni infección a distancia: recambio por guía en el mismo sitio, o usar la fístula si está lista.",
+    "Si los hemocultivos de control son negativos a las 48 h: colocar un nuevo catéter tunelizado guiado por imagen. Enviar la punta del catéter a cultivo.",
+    "Salvamento (sellado con antibiótico más antibiótico sistémico) solo si no hay otros sitios, el acceso es difícil, el paciente rechaza el procedimiento o faltan recursos.",
+    "§4. Sellados con antibiótico (con antibiótico sistémico, misma duración, germen sensible)",
+    "Vancomicina 5 mg/mL con citrato de sodio 4,67 % (10 mL); gentamicina 1 mg/mL con citrato 4,67 % (10 mL); vancomicina 2,5 mg/mL con heparina 500 U/mL; cefazolina 2,5 mg/mL con heparina 500 U/mL; ceftazidima 2,5 mg/mL con heparina 500 U/mL.",
+    "No verificado: ajuste de estas dosis en diálisis peritoneal (ver el tema de peritonitis) o en pacientes con peso extremo."
+  ],
+  claves: [
+    "Todo antibiótico se da después de la diálisis para que no se elimine en la sesión.",
+    "S. aureus: 4–6 semanas, retirar el catéter y buscar endocarditis o infección a distancia.",
+    "Gramnegativo y Candida: retirar siempre el catéter.",
+    "Fiebre sin foco en un paciente con catéter: hemocultivos antes del antibiótico.",
+    "El diagrama de decisión del documento original (qué cultivo lleva a retirar o conservar) no se leyó bien en la extracción: confirmar con el original."
+  ],
+  alert: "Sepsis con catéter de hemodiálisis: antibiótico empírico ya, hemocultivos y no esperar a la siguiente sesión si está inestable.",
+  ref: "NKF, Vascular Access Initiative: Diagnóstico y manejo de las infecciones del torrente sanguíneo relacionadas con el catéter (kidney.org, ficha vait-25). Consultar la política local de resistencias"
 },
 {
   id: "litiasis", cat: 4, title: "Litiasis renal y cólico nefrítico",
@@ -2040,6 +2257,7 @@ function render() {
   if (state.mode === "guardia") { renderGuardia(); return; }
   if (state.mode === "casos") { renderCasos(); return; }
   if (state.mode === "dial") { renderDial(); return; }
+  if (state.mode === "lab" && !state.open) { renderLab(); return; }
   if (state.mode === "calc" && !state.open) { renderCalc(); return; }
   if (state.mode === "farm") { renderFarm(); return; }
   var q = $("#q");
@@ -2833,11 +3051,11 @@ function renderFarm() {
 
 function applyMode() {
   syncMast();
-  var casos = state.mode === "casos" || state.mode === "guardia", dial = state.mode === "dial" || state.mode === "calc", farm = state.mode === "farm";
+  var casos = state.mode === "casos" || state.mode === "guardia", dial = state.mode === "dial" || state.mode === "calc" || state.mode === "lab", farm = state.mode === "farm";
   $(".searchbar").hidden = casos || dial || farm;
   $("#chips").hidden = casos || dial || farm;
   document.querySelectorAll(".tab").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === state.mode)); });
-  $("#meta").textContent = state.mode === "guardia" ? "Caso clínico · informe PDF" : farm ? DRUGS.length + " fármacos · rev. oct 2026" : state.mode === "calc" ? "Calculadoras · fórmulas publicadas" : dial ? "Kt/V · KDOQI 2015" : casos ? CASES.length + " casos · rev. oct 2026" : DATA.length + " temas · rev. oct 2026";
+  $("#meta").textContent = state.mode === "guardia" ? "Caso clínico · informe PDF" : farm ? DRUGS.length + " fármacos · rev. oct 2026" : state.mode === "calc" ? "Calculadoras · fórmulas publicadas" : state.mode === "lab" ? "Laboratorio · rangos de adulto" : dial ? "Kt/V · KDOQI 2015" : casos ? CASES.length + " casos · rev. oct 2026" : DATA.length + " temas · rev. oct 2026";
 }
 
 (function initSample() {
@@ -2856,7 +3074,7 @@ document.querySelector(".tabs").addEventListener("click", function (e) {
   var b = e.target.closest("[data-mode]");
   if (!b) return;
   state.mode = b.getAttribute("data-mode");
-  state.open = null; cs.id = null; cs.picks = []; cs.shown = 0;
+  state.open = null; state.lg = null; state.lx = null; LABQ.q = ""; cs.id = null; cs.picks = []; cs.shown = 0;
   applyMode(); render(); window.scrollTo(0, 0);
 });
 $("#view").addEventListener("input", function (e) {
@@ -2915,6 +3133,7 @@ try {
   else if (h === "casos") state.mode = "casos";
   else if (h === "dialisis") state.mode = "dial";
   else if (h === "calculadoras") state.mode = "calc";
+  else if (h === "laboratorio") state.mode = "lab";
   else if (h === "farmacos") state.mode = "farm";
   else if (h && DATA.some(function (t) { return t.id === h; })) state.open = h;
 } catch (err) {}
@@ -4907,6 +5126,7 @@ var CALQ = { v: {} };
     furo: { n: "Furosemida", au: "mg", amt: "250", vol: "250", du: "mgh" },
     nora: { n: "Noradrenalina", au: "mg", amt: "2", vol: "50", du: "ugkgmin" },
     hep: { n: "Heparina", au: "U", amt: "25000", vol: "500", du: "uh" },
+    nica: { n: "Nicardipino", au: "mg", amt: "", vol: "", du: "mgh" },
     otro: { n: "Otro fármaco", au: "mg", amt: "", vol: "", du: "mgh" }
   };
   function out_drg() {
@@ -4933,6 +5153,7 @@ var CALQ = { v: {} };
       }
     }
     if (dk === "nora" && du === "ugkgmin" && (dose > 1)) w.push("Dosis alta (>1 µg/kg/min de base): la ficha ejemplifica hasta 1 µg/kg/min; revisa que la unidad sea base y no tartrato (1 mg base = 2 mg tartrato).");
+    if (dk === "nica" && du === "mgh") { if (dose > 15) w.push("Supera 15 mg/h, el máximo citado (Mayo). Inicio 5 mg/h, subir 2,5 mg/h cada 10 min. Escribe la concentración de TU producto: no está verificada aquí."); }
     if (dk === "hep" && du === "uh") { if (dose < 1000 || dose > 2000) w.push("Fuera del rango de mantenimiento de la ficha (1000-2000 U/h); confirma con tu protocolo y el TTPa."); }
     if (w.length) h += '<li class="hd-note"><b>Aviso:</b> ' + w.join(" ") + '</li>';
     return h + '</ul>';
@@ -4940,7 +5161,7 @@ var CALQ = { v: {} };
   CALQ.v.d_drug = "furo"; CALQ.v.d_amt = DRG.furo.amt; CALQ.v.d_vol = DRG.furo.vol; CALQ.v.d_au = "mg"; CALQ.v.d_du = "mgh";
   var OUT = { ab: out_ab, inf: out_inf, drg: out_drg };
   window.calcUpdateAll = function () { Object.keys(OUT).forEach(function (k) { var e = document.getElementById("co-" + k); if (e) e.innerHTML = OUT[k](); }); };
-  var CALC_IDS = ["calc-tfg", "calc-electrolitos", "calc-fe", "calc-hd", "calc-dosis", "calc-unidades"];
+  var CALC_IDS = ["calc-tfg", "calc-electrolitos", "calc-fe", "calc-hd", "calc-dosis"];
   window.renderCalc = function () {
     var cards = CALC_IDS.map(function (id) {
       var t = DATA.filter(function (x) { return x.id === id; })[0]; if (!t) return "";
@@ -4949,8 +5170,8 @@ var CALQ = { v: {} };
     var h = '<article class="detail"><div class="cat">Calculadoras</div><h1>Cálculos rápidos de uso diario</h1>' +
       '<p class="intro">Elige una calculadora. Las que usan creatinina, glucosa, calcio, urea o albúmina permiten escribir en mg/dL o en unidades del SI (mmol/L, µmol/L, g/L). Apoyo a la decisión: no sustituyen el juicio clínico.</p>' +
       '<div class="list">' + cards + '</div>' +
-      sec("drg", "Infusión de fármacos: dosis a mL/h (furosemida, noradrenalina, heparina)",
-        sel("d_drug", "Fármaco", [["furo", "Furosemida"], ["nora", "Noradrenalina (base)"], ["hep", "Heparina"], ["otro", "Otro fármaco"]]) +
+      sec("drg", "Infusión de fármacos: dosis a mL/h (furosemida, noradrenalina, heparina, nicardipino)",
+        sel("d_drug", "Fármaco", [["furo", "Furosemida"], ["nora", "Noradrenalina (base)"], ["hep", "Heparina"], ["nica", "Nicardipino"], ["otro", "Otro fármaco"]]) +
         inp("d_amt", "Cantidad en la bolsa o jeringa", "") + sel("d_au", "Unidad de cantidad", [["mg", "mg"], ["U", "unidades (U)"]]) + inp("d_vol", "Volumen final", "mL") +
         inp("d_dose", "Dosis deseada", "") + sel("d_du", "Unidad de dosis", [["mgh", "mg/h"], ["mgmin", "mg/min"], ["ugmin", "µg/min"], ["ugkgmin", "µg/kg/min"], ["uh", "U/h"]]) + inp("d_wt", "Peso (para µg/kg/min)", "kg"),
         "Fuentes: fichas UK (emc) de furosemida inyectable (no superar 4 mg/min; máx 1500 mg/día; 2,5 mg/min si creatinina >5 mg/dL), noradrenalina 1 mg/mL (dosis en µg/kg/min de base; ejemplo de dilución de 40 mg/L; vía central) y heparina 1000 U/mL (mantenimiento 1000-2000 U/h; TTPa 1,5-2,5 veces el control). Las concentraciones precargadas de furosemida y heparina son ejemplos de práctica común, no de la ficha: usa la de tu servicio.") +
@@ -4986,7 +5207,7 @@ var CALQ = { v: {} };
 })();
   var _ot = openTopic;
   openTopic = function (id) {
-    if (/^calc-/.test(id) && state.mode !== "calc") { state.mode = "calc"; applyMode(); }
+    if (/^calc-/.test(id) && state.mode !== "calc" && state.mode !== "lab") { state.mode = "calc"; applyMode(); }
     return _ot.apply(this, arguments);
   };
   var _rd = renderDetail;
@@ -5014,12 +5235,523 @@ var CALQ = { v: {} };
   add();
 })();
 /*ENDUNISEL*/
+/*CLSMOD*/
+(function () {
+  var GC = { 0: "#2E9E6B", 1: "#D9A406", 2: "#E07B1A", 3: "#C8372D", n: "#2F6FBF", t: "#12908E" };
+  function r(k, v, c) { return '<div class="gr-r" style="--gc:' + GC[c == null ? "n" : c] + '"><span class="gr-k">' + k + '</span><span class="gr-v">' + v + '</span></div>'; }
+  function g(rows) { return '<div class="gr">' + rows.join("") + '</div>'; }
+  function h(t) { return '<p class="gr-h">' + t + '</p>'; }
+  function l(t, v) { return '<span class="gr-l">' + t + '</span> ' + v; }
+  function put(id, title, html) {
+    var done = false, n = NEWT[id], q = (typeof RS !== "undefined") ? RS[id] : null;
+    [n && n.s, q && q.o, q && q.ks].forEach(function (arr) {
+      if (!arr) return;
+      for (var i = 0; i < arr.length; i++) if (arr[i][0] === title) { arr[i][1] = html; done = true; }
+    });
+    if (done) return;
+    if (q && q.o) { q.o.unshift([title, html]); return; }
+    if (n) { n.s = n.s || []; n.s.unshift([title, html]); }
+  }
+  put("us-vci-vexus", "Vena cava inferior (criterios ASE)",
+    '<ul><li><b>Cómo medirla:</b> paciente en decúbito supino, ventana subcostal longitudinal, al final de la espiración, a 1 a 3 cm de la unión con la aurícula derecha. El diámetro mínimo se mide durante una inspiración rápida (sniff) en el mismo punto.</li></ul>' +
+    h("Presión de la aurícula derecha") +
+    g([r("Normal", "unos 3 mmHg (0 a 5)", 0), r("Intermedia", "unos 8 mmHg (5 a 10)", 1), r("Alta", "unos 15 mmHg (10 a 20)", 3)]) +
+    '<ul><li><b>VCI mayor de 2,1 cm con colapso menor del 50%</b> con el sniff sugiere presión auricular alta (10 a 20 mmHg).</li></ul>' +
+    h("Grados del VExUS") +
+    '<p class="gr-n">Solo se hace el Doppler venoso si la VCI mide 2 cm o más (Beaubien-Souligny; resumen EMSJ).</p>' +
+    g([r("Grado 0", "Sin congestión en ningún órgano", 0), r("Grado 1", "Solo hallazgos congestivos leves", 1), r("Grado 2", "Congestión grave en un solo órgano", 2), r("Grado 3", "Congestión grave en al menos 2 de los 3 órganos (hepático, portal, renal)", 3)]) +
+    '<p class="gr-n">Los cortes de VCI y colapso para las categorías normal e intermedia de presión auricular son los de ASE <em>(no verificado en la fuente consultada)</em>.</p>' +
+    h("Limitaciones del VExUS") +
+    '<ul><li>La presión intraabdominal elevada y la hipertensión pulmonar crónica alteran la VCI.</li><li>La insuficiencia tricuspídea grave puede no cambiar la vena hepática.</li><li>El flujo portal pulsátil aparece en personas delgadas sanas.</li><li>La enfermedad hepática o renal parenquimatosa reduce la fiabilidad del Doppler venoso.</li></ul>');
+  put("ic-lra-uci", "Definición y estadios",
+    '<ul><li><b>Definición:</b> aumento de la creatinina de 0,3 mg/dL o más en 48 horas, o aumento a 1,5 veces la basal en los 7 días previos, o diuresis menor de 0,5 mL/kg/h durante 6 horas.</li></ul>' +
+    h("Estadios de la LRA") +
+    g([r("Estadio 1", l("Creatinina", "1,5–1,9 veces la basal, o aumento de 0,3 mg/dL o más.") + '<br>' + l("Diuresis", "menor de 0,5 mL/kg/h durante 6 a 12 horas."), 1),
+       r("Estadio 2", l("Creatinina", "2,0–2,9 veces la basal.") + '<br>' + l("Diuresis", "menor de 0,5 mL/kg/h durante 12 horas o más."), 2),
+       r("Estadio 3", l("Creatinina", "3 veces o más, o 4,0 mg/dL o más, o inicio de terapia renal.") + '<br>' + l("Diuresis", "menor de 0,3 mL/kg/h durante 24 horas, o anuria 12 horas."), 3)]) +
+    '<p class="gr-n">En menores de 18 años, también un filtrado menor de 35 mL/min/1,73 m².</p>');
+  put("ic-cardiorrenal", "Clasificación (Ronco)",
+    g([r("Tipo 1", "Insuficiencia cardiaca aguda que causa LRA.", "n"), r("Tipo 2", "Insuficiencia cardiaca crónica que causa ERC progresiva.", "n"),
+       r("Tipo 3", "LRA que causa insuficiencia cardiaca aguda.", "t"), r("Tipo 4", "ERC que causa insuficiencia cardiaca crónica.", "t"),
+       r("Tipo 5", "Daño de ambos por una causa sistémica (sepsis, cirrosis, amiloidosis).", 2)]) +
+    '<p class="gr-n">Tipos 1 y 2: el corazón daña al riñón. Tipos 3 y 4: el riñón daña al corazón. Tipo 5: una causa común daña a los dos.</p>');
+  put("calc-tfg", "Cómo interpretarlo",
+    h("Categorías de filtrado (G), mL/min/1,73 m²") +
+    g([r("G1", "≥ 90 · normal o alto", 0), r("G2", "60–89 · levemente disminuido", 0), r("G3a", "45–59 · leve a moderadamente disminuido", 1), r("G3b", "30–44 · moderada a gravemente disminuido", 2), r("G4", "15–29 · gravemente disminuido", 3), r("G5", "&lt; 15 · falla renal", 3)]) +
+    '<ul><li>Para <b>ajustar fármacos</b> la ficha de farmacología indica qué ecuación usar; Cockcroft-Gault es la que se usó en muchos estudios de dosificación.</li><li>La KFRE de 4 variables se calculó en cohortes norteamericanas; la página consultada indica que puede requerir recalibración local y no ofrece los factores regionales (no verificado).</li><li>Rango de uso de la KFRE (ERC G3–G5): <em>(no verificado en la fuente consultada)</em>.</li></ul>');
+  put("erc", "Clasificación de la ERC (KDIGO)",
+    '<p class="gr-n">TFGe &lt;60 mL/min/1,73 m² o marcadores de daño renal durante más de 3 meses. El riesgo se interpreta con los dos ejes.</p>' +
+    h("Filtrado (G), mL/min/1,73 m²") +
+    g([r("G1", "≥ 90 · normal o alto", 0), r("G2", "60–89 · levemente disminuido", 0), r("G3a", "45–59 · leve a moderadamente disminuido", 1), r("G3b", "30–44 · moderada a gravemente disminuido", 2), r("G4", "15–29 · gravemente disminuido", 3), r("G5", "&lt; 15 · falla renal", 3)]) +
+    h("Albuminuria (A), cociente albúmina/creatinina") +
+    g([r("A1", "&lt; 30 mg/g", 0), r("A2", "30–300 mg/g", 1), r("A3", "&gt; 300 mg/g", 3)]));
+  put("tx-rechazo-celular", "Banff 2019: categorías diagnósticas",
+    g([r("1", "Normal o cambios inespecíficos"), r("2", "Rechazo mediado por anticuerpos"), r("3", "Cambios limítrofes (borderline)"), r("4", "Rechazo mediado por células T"), r("5", "Nefropatía por poliomavirus"), r("6", "Otros cambios no relacionados con rechazo")]) +
+    '<ul><li><b>Biopsia adecuada:</b> al menos 10 glomérulos y 2 arterias pequeñas.</li><li><i>Fuente: resumen de la clasificación Banff 2019 en una enciclopedia médica; el texto estaba en parte alterado, por lo que conviene comprobar los umbrales en el informe original.</i></li></ul>');
+  put("gl-lupica", "Biopsia y clases",
+    '<ul><li>Los cambios de función renal o de proteinuria pueden indicar nefritis lúpica y la biopsia la confirma. Repetirla si se sospecha cronicidad u otro diagnóstico, como microangiopatía trombótica.</li></ul>' +
+    g([r("Clase I o II", "La inmunosupresión depende de la enfermedad extrarrenal, salvo el síndrome nefrótico por podocitopatía lúpica, que se maneja como cambios mínimos."),
+       r("Clase V", "Bloqueo del sistema renina-angiotensina, control de la presión e <b>hidroxicloroquina</b>. Se añade inmunosupresión si hay proteinuria nefrótica.")]) +
+    '<ul><li><b>Hidroxicloroquina</b> para todos los pacientes con nefritis lúpica, salvo contraindicación.</li></ul>');
+})();
+/*ENDCLSMOD*/
+/*CONSMOD*/
+(function () {
+  function r(k, v, c) { return '<div class="gr-r" style="--gc:' + c + '"><span class="gr-k">' + k + '</span><span class="gr-v">' + v + '</span></div>'; }
+  var sx = '<p class="gr-n">Dosis de la guía local del NHS (North East London ICB / Barts Health, 2023) para ERC estadio 5.</p>' +
+    '<div class="gr st">' +
+    r("Dolor", "<b>1.ª línea:</b> paracetamol 1 g cada 6 h (500 mg cada 6 h si es muy mayor o frágil, &lt;50 kg o hepatopatía).<br><b>2.ª:</b> codeína 15 mg hasta 4 veces al día o tramadol 50 mg hasta 2 veces al día, más paracetamol; si el dolor es crónico y responde, parche de buprenorfina 5 µg/h cada 7 días.<br><b>3.ª:</b> oxicodona 1,25-2,5 mg hasta 4 veces al día; parche de fentanilo 12 µg/h si es crónico y responde.<br><b>Dolor neuropático:</b> gabapentina 100 mg por la noche (hasta 300 mg) o pregabalina 25 mg en noches alternas (hasta 50 mg dos veces al día); luego amitriptilina 10 mg por la noche (hasta 25-50 mg).", "#C8372D") +
+    r("Prurito", "Emolientes dos veces al día (puede añadirse crema acuosa con mentol); fijar los quelantes de fósforo si todavía come; gabapentina o pregabalina como arriba; sertralina 25-50 mg al día o mirtazapina 7,5-15 mg por la noche (cuidado con la sedación); clorfenamina puede probarse.", "#E07B1A") +
+    r("Náuseas", "<b>1.ª:</b> haloperidol 0,5 mg al día, subiendo de 0,5 mg en 0,5 mg hasta máx 1,5 mg tres veces al día (también subcutáneo).<br><b>2.ª:</b> metoclopramida 10 mg tres veces al día, máx 30 mg/24 h. Si hay reflujo: omeprazol 20 mg al día.", "#D9A406") +
+    r("Piernas inquietas", "Movilizarse; gabapentina o pregabalina; 2.ª línea clonazepam 0,5 mg por la noche (cuidado si usa opioides).", "#12908E") +
+    r("Agitación o delirio", "Puede indicar fase terminal; antes, descartar causas reversibles. Si no las hay: haloperidol 0,5-1 mg hasta dos veces al día y/o lorazepam 0,5 mg oral o sublingual hasta dos veces al día.", "#2F6FBF") +
+    r("Disnea", "Ventilador o corriente de aire en la cara. Con sobrecarga: furosemida oral hasta 240 mg/24 h (subcutánea por jeringa si no responde en 1 semana) y metolazona 2,5 mg dos veces por semana. Con anemia: hierro IV o eritropoyetina por el equipo de nefrología.", "#6C4BB5") +
+    '</div><p class="gr-n"><b>Evitar o con cuidado (según la misma guía):</b> opioides orales de liberación lenta; parches de fentanilo en pacientes sin opioides previos; amitriptilina por encima de 50 mg; AINE sin hablar antes de los riesgos. La guía también señala el riesgo de acumulación con los opioides orales en general.</p>';
+  RS["cuidados-conservadores"] = { o: [["Síntomas y fármacos", sx]] };
+  NEWT["cuidados-conservadores"] = { "c": "Opción activa de atención para quien no desea o no se beneficia de la diálisis: decisión compartida y control de síntomas.", "s": [], "a": [], "g": "Guía RPA 2010 (adultos) y guía local de síntomas del NHS (2023)", "n": "Las dosis vienen de una guía local del Reino Unido, no de una guía internacional: confírmalas con tu formulario y ajusta según el paciente.", "v": "partial", "u": ["https://thaddeuspope.com/images/RPA_-_2010_no_dialysis_PVS_or_dementia.pdf", "https://primarycare.northeastlondon.icb.nhs.uk/wp-content/uploads/2023/09/Symptom-Control-stage-5-CKD.pdf"] };
+})();
+/*ENDCONSMOD*/
+/*VACMOD*/
+(function () {
+  function r(k, v, c) { return '<div class="gr-r" style="--gc:' + c + '"><span class="gr-k">' + k + '</span><span class="gr-v">' + v + '</span></div>'; }
+  var h = '<p class="gr-n">Según la NKF (calendario CDC, octubre 2025); la columna «Reino Unido» viene de la UKKA. <b>D</b> = ERC avanzada o diálisis; <b>T</b> = trasplante.</p><div class="gr st">' +
+    r("Gripe", "Vacuna inyectada cada año a todos (D y T). En trasplante, no la nasal.", "#2E9E6B") +
+    r("COVID-19", "Vacuna de la temporada. Diálisis y trasplante pueden necesitar más de una dosis. Reino Unido: esquema ampliado más refuerzos estacionales.", "#2E9E6B") +
+    r("Neumococo", "Conjugada (PCV15, PCV20 o PCV21) y PPSV23 según las vacunas previas, a cualquier edad en ERC avanzada, diálisis o inmunodepresión. Reino Unido: refuerzo cada 5 años.", "#2E9E6B") +
+    r("Zoster recombinante (no viva)", "2 dosis separadas 2 a 6 meses. D: desde los 50 años. T: a cualquier edad. Reino Unido: desde los 18 años con inmunosupresión grave.", "#2E9E6B") +
+    r("Hepatitis B", "2 a 4 dosis; en diálisis puede hacer falta dosis alta o extra. Ver el esquema y el control de anti-HBs en la sección superior.", "#2F6FBF") +
+    r("VSR", "Una dosis a los 75 años o más. De 50 a 74 con ERC (sobre todo diálisis o trasplante): hablar del riesgo. Reino Unido: de 65 a 74 años si hay inmunosupresión, desde el 1 de septiembre de 2026.", "#2F6FBF") +
+    r("Tdap o Td", "Cada 10 años en todos los adultos.", "#2F6FBF") +
+    r("VPH", "D hasta los 26 años: 2 a 3 dosis. T hasta los 26 años: 3 dosis. De 27 a 45: hablar con el médico.", "#2F6FBF") +
+    r("Varicela (viva)", "D nacidos en 1980 o después, sin vacuna ni inmunidad: 2 dosis con 4 a 8 semanas de separación. <b>No en trasplante.</b>", "#E07B1A") +
+    r("SRP, sarampión-paperas-rubéola (viva)", "D nacidos en 1957 o después, sin vacuna ni inmunidad: 1 o 2 dosis con al menos 4 semanas. <b>No en trasplante.</b>", "#E07B1A") +
+    '</div><p class="gr-n">Verde: recomendada. Azul: recomendada con condiciones. Naranja: viva; no se da después del trasplante.</p>';
+  RS["vacunas-erc"] = { o: [["Por vacuna", h]] };
+  NEWT["vacunas-erc"] = { "c": "Qué vacunar en ERC avanzada, diálisis y trasplante, qué vacunas vivas evitar y cómo controlar la respuesta a hepatitis B.", "s": [], "a": [], "g": "NKF (calendario CDC 2025), ACIP 2006 sobre hepatitis B en diálisis y UKKA 2026", "n": "Las edades y los refuerzos difieren entre países: sigue el programa de vacunación de tu país.", "v": "partial", "u": ["https://kidney.org/node/29719", "https://webarchive.library.unt.edu/web/20080921102625/http:/cdc.gov/vaccines/pubs/downloads/b_dialysis_guide.pdf", "https://www.ukkidney.org/sites/default/files/documents/UKRPG%20Vaccine%20Information%20July%202026%20V3.pdf"] };
+})();
+/*ENDVACMOD*/
+/*UTIMOD*/
+(function () {
+  function r(k, v, c) { return '<div class="gr-r" style="--gc:' + c + '"><span class="gr-k">' + k + '</span><span class="gr-v">' + v + '</span></div>'; }
+  var a = '<p class="gr-n">Protocolo Derbyshire (no embarazadas, sin sonda). Mujer: 3 días; hombre: 7 días.</p><div class="gr st">' +
+    r("TFGe 45–59", "<b>Nitrofurantoína</b> 100 mg LM cada 12 h. Otras: pivmecilinam, fosfomicina 3 g, trimetoprima 200 mg cada 12 h.", "#2E9E6B") +
+    r("TFGe 30–44", "<b>Pivmecilinam</b> 400 mg una vez y luego 200 mg cada 8 h. Otras: fosfomicina; trimetoprima solo en mujer. <b>Nitrofurantoína</b> solo 3–7 días si hay germen multirresistente.", "#D9A406") +
+    r("TFGe &lt;30", "<b>Pivmecilinam</b> igual. Otras: fosfomicina; ciprofloxacino 500 mg cada 12 h como último recurso.", "#E07B1A") +
+    r("TFGe &lt;10 o diálisis", "Sin fosfomicina. El protocolo pide consultar; <b>no verificado</b> qué usar.", "#C8372D") +
+    '</div>';
+  var b = '<div class="gr st">' +
+    r("Nitrofurantoína", "Contraindicada con TFGe &lt;45. Ni ITU alta ni sepsis.", "#C8372D") +
+    r("Fosfomicina oral", "No con TFGe &lt;10 ni diálisis. No sirve en ITU alta.", "#E07B1A") +
+    r("Trimetoprima", "Hiperpotasemia con IECA, ARA II o espironolactona. Resistencia alta.", "#E07B1A") +
+    r("Ciprofloxacino", "C. difficile. Con TFGe 10–30: máximo 500 mg cada 12 h.", "#D9A406") +
+    r("Pivmecilinam", "Penicilina. Solo cistitis. Puede fallar con muy poca función renal.", "#D9A406") +
+    '</div>';
+  var c = '<div class="gr st">' +
+    r("Bacteriuria asintomática, &gt;2 meses", "No cultivar ni tratar. Repetir si sale positiva.", "#2E9E6B") +
+    r("Cistitis", "5–10 días. Sin dosis única ni 3 días.", "#2F6FBF") +
+    r("Pielonefritis o complicada", "14–21 días, espectro estrecho según antibiograma.", "#E07B1A") +
+    r("Prevención", "TMP-SMX 6 meses; sonda y stent ≤4 semanas.", "#12908E") +
+    '</div>';
+  RS["itu-erc"] = { o: [["Cistitis por TFGe", a], ["Qué cuidar de cada antibiótico", b]] };
+  RS["itu-trasplante"] = { o: [["Resumen", c]] };
+  NEWT["itu-erc"] = { "c": "Antibiótico para ITU en ERC según TFGe, qué evitar y duración.", "s": [], "a": [], "g": "MHRA, protocolo Derbyshire e IDSA 2025", "n": "Las dosis de antibióticos intravenosos ajustadas a la TFGe no se verificaron: usar la ficha del fármaco.", "v": "partial", "u": ["https://www.gov.uk/drug-safety-update/nitrofurantoin-now-contraindicated-in-most-patients-with-an-estimated-glomerular-filtration-rate-egfr-of-less-than-45-ml-min-1-73m2", "https://app.derbyshiremedicinesmanagement.nhs.uk/assets/Clinical_Guidelines/Formulary_by_BNF_chapter_prescribing_guidelines/BNF_chapter_5/Management_of_Lower_UTI_in_CKD.pdf", "https://www.emdocs.net/?p=24659"] };
+  NEWT["itu-trasplante"] = { "c": "Cuándo tratar, cuánto dura el tratamiento y cómo prevenir ITU en trasplante renal.", "s": [], "a": [], "g": "AST IDCOP 2019", "n": "No se abrió el texto completo de la guía; los puntos vienen de un resumen. El antibiótico empírico y su dosis no se verificaron.", "v": "partial", "u": ["https://guidelinecentral.com/guideline/8253", "https://read.qxmd.com/read/30793386/urinary-tract-infections-in-solid-organ-transplant-recipients-guidelines-from-the-american-society-of-transplantation-infectious-diseases-community-of-practice"] };
+})();
+/*ENDUTIMOD*/
+/*HTAEMOD*/
+(function () {
+  function r(k, v, c) { return '<div class="gr-r" style="--gc:' + c + '"><span class="gr-k">' + k + '</span><span class="gr-v">' + v + '</span></div>'; }
+  var a = '<div class="gr st">' +
+    r("Urgencia", "Sin daño de órgano. <b>No bajar de inmediato.</b> Dos orales combinados y revisar pronto.", "#2E9E6B") +
+    r("Emergencia", "Con daño de órgano. IV en UCI. PAM −20–25 % en la primera hora.", "#C8372D") +
+    r("Disección aórtica", "FC &lt;60 y PAS &lt;120. Esmolol primero.", "#E07B1A") +
+    r("Ictus isquémico", "Sin trombolisis: &lt;220/120. Antes de trombolisis: &lt;185/110.", "#D9A406") +
+    r("Hemorragia intracerebral", "PAS &lt;140 (algunos aceptan 160–180 si PAS &gt;220).", "#D9A406") +
+    '</div>';
+  var b = '<div class="gr st">' +
+    r("Nicardipino", "5 mg/h, +2,5 mg/h cada 10 min, máx 15 mg/h. Puede bajar la TFG.", "#2F6FBF") +
+    r("Labetalol (bolo)", "10–20 mg IV; a los 10 min repetir o duplicar; máx 80 mg por dosis; cambiar tras 300 mg.", "#2F6FBF") +
+    r("Esmolol", "Bolo 500 µg/kg y 50 µg/kg/min; +25–50 cada 10 min; máx 300 µg/kg/min.", "#2F6FBF") +
+    r("Clevidipino", "1–2 min de acción; no depende del riñón. Dosis no verificada.", "#12908E") +
+    r("Nitroprusiato", "Tiocianato se acumula en ERC (3–6 días). Último recurso. Dosis no verificada.", "#C8372D") +
+    '</div>';
+  RS["hta-emergencia"] = { o: [["Metas de presión", a], ["Infusiones: dosis", b]] };
+  NEWT["hta-emergencia"] = { "c": "Cuándo y cuánto bajar la presión en urgencia y emergencia hipertensiva, con dosis de infusión y precauciones en ERC.", "s": [], "a": [], "g": "Manual Merck y Mayo Clinic EM Journal Club", "n": "Dosis de clevidipino, nitroglicerina, nitroprusiato y labetalol en infusión no verificadas. No se abrieron las guías ACC/AHA ni ESC.", "v": "partial", "u": ["https://www.merckmanuals.com/en-ca/professional/cardiovascular-disorders/hypertension/hypertensive-emergencies", "https://emjournalclub.mayo.edu/2020/09/29/under-pressure-acute-blood-pressure-management-in-emergency-medicine/"] };
+  var h = '<p class="gr-n">Dosis de la guía NKF; todo se da al final de la diálisis.</p><div class="gr st">' +
+    r("Gram positivo", "<b>Cefazolina</b> 2 g IV. Si alergia grave o SARM: <b>vancomicina</b> 20–25 mg/kg y luego 10–15 mg/kg.", "#2F6FBF") +
+    r("Gram negativo", "<b>Ceftazidima</b> 1 g IV (con función residual o riesgo de ototoxicidad). Si no: <b>tobramicina</b> 2 mg/kg (máx 100 mg) y luego 1 mg/kg.", "#2F6FBF") +
+    r("Estafilococo coagulasa-negativo", "14 días.", "#2E9E6B") +
+    r("S. aureus", "4–6 semanas. Retirar catéter. Ecocardiograma.", "#C8372D") +
+    r("Gramnegativo", "Mínimo 14 días. Retirar catéter.", "#E07B1A") +
+    r("Candida", "Mínimo 14 días. Retirar catéter.", "#E07B1A") +
+    '</div>';
+  RS["bacteriemia-hd"] = { o: [["Resumen por germen", h]] };
+  NEWT["bacteriemia-hd"] = { "c": "Antibiótico empírico a dosis de diálisis, duración por germen y manejo del catéter.", "s": [], "a": [], "g": "NKF Vascular Access Initiative", "n": "El diagrama de decisión original no se leyó bien; confirmar con el documento.", "v": "partial", "u": ["https://www.kidney.org/sites/default/files/vait-25_diagnosis_and_management_of_catheter_related_bloodstream_infections.pdf"] };
+  var q = RS["hiperpotasemia"];
+  if (q) {
+    q.o = q.o || [];
+    q.o.push(["Calendario de controles", '<p class="gr-n">UK Kidney Association 2020: tras insulina-glucosa, medir K⁺ y glucosa en estos minutos.</p><div class="gr st">' +
+      r("Medir", "Al inicio y a los 30, 60, 90, 120, 180, 240, 300, 360, 480 y 720 min.", "#2F6FBF") +
+      r("Glucosa", "Si la glucosa previa es &lt;7,0 mmol/L (~125 mg/dL): dextrosa al 10 % a 50 mL/h durante 5 h.", "#D9A406") +
+      r("Calcio", "Gluconato 10 %, 30 mL en 5 min; repetir a los 5 min si persisten los cambios del ECG.", "#C8372D") +
+      '</div>']);
+  }
+})();
+/*ENDHTAEMOD*/
+/*MANEJOMOD*/
+(function () {
+  ["cuidados-conservadores", "vacunas-erc", "itu-erc", "itu-trasplante", "hta-emergencia", "bacteriemia-hd"].forEach(function (id) {
+    var t = DATA.filter(function (x) { return x.id === id; })[0], q = RS[id]; if (!t || !q) return;
+    q.e = "<ul>" + t.manejo.map(function (m) { return /^§/.test(m) ? '<li class="sub"><b>' + m.replace(/^§\s*/, "") + "</b></li>" : "<li>" + m + "</li>"; }).join("") + "</ul>";
+    q.o = q.o || [];
+    if (t.claves && t.claves.length && !q.o.some(function (x) { return x[0] === "Puntos clave"; })) q.o.push(["Puntos clave", "<ul>" + t.claves.map(function (c) { return "<li>" + c + "</li>"; }).join("") + "</ul>"]);
+    if (t.ref) q.refs = [t.ref];
+  });
+})();
+/*ENDMANEJOMOD*/
+/*LABMOD*/
+var LABQ = { sel: null, q: "", val: "", ui: 0, sex: "M" };
+(function () {
+  var G = { e: "Electrolitos y ácido-base", r: "Función renal y metabolismo", h: "Hígado y músculo", l: "Lípidos", m: "Mineral y óseo", b: "Sangre y hierro", c: "Coagulación", t: "Tiroides", o: "Orina" };
+  var L = [
+    { id: "na", n: "Sodio", g: "e", al: "na hiponatremia hipernatremia", u: [{ k: "mEq/L", r: [135, 145], d: 0 }, { k: "mmol/L", r: [135, 145], d: 0 }],
+      w: "Cuánto sodio hay en relación con el agua del cuerpo. Refleja el balance de agua más que el de sal.",
+      lo: ["Mide la osmolalidad y la glucosa: con glucemia muy alta o lípidos/proteínas altos el sodio baja de forma falsa.", "Clasifica por volumen: hipovolémica (diuréticos, pérdidas digestivas), euvolémica (SIADH, hipotiroidismo, insuficiencia suprarrenal, polidipsia) o hipervolémica (insuficiencia cardiaca, cirrosis, síndrome nefrótico, ERC).", "Sodio y osmolalidad en orina, y volumen clínico, orientan la causa."],
+      hi: ["Casi siempre es falta de agua libre: poca ingesta, pérdidas insensibles o diabetes insípida; también exceso de sodio (sueros hipertónicos, bicarbonato).", "Orina: osmolalidad baja con diuresis alta sugiere diabetes insípida; osmolalidad alta, pérdida extrarrenal."],
+      t: ["hiponatremia", "hipernatremia"], x: "Corregir despacio: ver los temas para el límite de velocidad." },
+    { id: "k", n: "Potasio", g: "e", al: "k hiperpotasemia hipopotasemia hipercalemia", u: [{ k: "mEq/L", r: [3.5, 5.1], d: 1 }, { k: "mmol/L", r: [3.5, 5.1], d: 1 }],
+      bands: [[3.5, "Bajo", 2], [5.2, "Normal", 0], [6.0, "Alto leve (≥5,5 es la zona de actuar)", 1], [6.5, "Moderado (6,0–6,4)", 2], [99, "Grave (≥6,5)", 3]],
+      w: "Potasio sérico. Pequeños cambios alteran el ritmo del corazón.",
+      hi: ["Descartar pseudohiperpotasemia (hemólisis, leucocitosis o plaquetas muy altas) si el ECG es normal.", "Causas: ERC o LRA, IECA/ARA II, espironolactona, AINE, trimetoprima, heparina, acidosis, lisis tisular.", "Pedir ECG si K ≥6,0; tratar de inmediato con cambios ECG o K ≥6,5."],
+      lo: ["Pérdidas digestivas o renales (diuréticos, hiperaldosteronismo), desplazamiento al interior de la célula (insulina, beta-agonistas, alcalosis), poca ingesta.", "Medir magnesio: si está bajo, el potasio no sube hasta corregirlo.", "Con hipertensión asociada, pensar en hiperaldosteronismo primario."],
+      t: ["hiperpotasemia", "hipopotasemia"], x: "Gravedad según la guía de la UK Kidney Association: leve 5,5–5,9; moderada 6,0–6,4; grave ≥6,5." },
+    { id: "cl", n: "Cloro", g: "e", al: "cloruro cl", u: [{ k: "mEq/L", r: [96, 106], d: 0 }, { k: "mmol/L", r: [96, 106], d: 0 }],
+      w: "Principal anión del plasma. Ayuda a interpretar el equilibrio ácido-base.",
+      hi: ["Acidosis metabólica hiperclorémica: diarrea, acidosis tubular renal, exceso de suero salino.", "Calcular la brecha aniónica para separar de la acidosis con brecha alta."],
+      lo: ["Vómitos o aspiración gástrica y diuréticos de asa o tiazidas (alcalosis metabólica hipoclorémica).", "Cloruria baja orienta a pérdidas digestivas; alta, a diuréticos."],
+      t: ["acidosis-metabolica"] },
+    { id: "hco3", n: "Bicarbonato", g: "e", al: "bicarbonato hco3 co2", u: [{ k: "mEq/L", r: [23, 29], d: 0 }, { k: "mmol/L", r: [23, 29], d: 0 }],
+      w: "Reserva alcalina. En la ERC baja cuando el riñón no excreta el ácido.",
+      lo: ["Acidosis metabólica: calcular la brecha aniónica. Brecha alta: cetoacidosis, láctica, uremia, tóxicos. Brecha normal: diarrea, acidosis tubular renal.", "En ERC, la acidosis persistente acelera la pérdida de función renal y el catabolismo muscular."],
+      hi: ["Alcalosis metabólica (vómitos, diuréticos, hiperaldosteronismo) o compensación de hipercapnia crónica.", "Pedir gasometría para separar."],
+      t: ["acidosis-metabolica"] },
+    { id: "ca", n: "Calcio total", g: "m", al: "calcio total hipercalcemia hipocalcemia", u: [{ k: "mg/dL", r: [8.4, 10.6], d: 1 }, { k: "mmol/L", r: [2.1, 2.5], d: 2 }],
+      w: "Calcio total (unido a albúmina más ionizado). Corregir por albúmina antes de interpretar.",
+      hi: ["Hiperparatiroidismo primario y malignidad son las dos causas más frecuentes. Pedir PTH: alta o normal con calcio alto sugiere primario; baja sugiere otra causa.", "Otras: vitamina D en exceso, calcio y tiazidas, inmovilización, enfermedades granulomatosas.", "Con ERC: hipercalcemia por calcio, análogos de vitamina D o enfermedad ósea adinámica."],
+      lo: ["Corregir por albúmina o medir calcio ionizado.", "Causas: déficit de vitamina D, hipoparatiroidismo, ERC con hiperfosfatemia, hipomagnesemia, pancreatitis, fármacos.", "ECG con QT largo o síntomas: tratar."],
+      t: ["hipercalcemia", "hipocalcemia", "ckd-mbd"], x: "En Calcular hay una calculadora de calcio corregido." },
+    { id: "cai", n: "Calcio iónico", g: "m", al: "calcio ionizado iónico", u: [{ k: "mmol/L", r: [1.15, 1.35], d: 2 }, { k: "mg/dL", r: [4.6, 5.1], d: 1 }],
+      w: "Fracción activa del calcio. No depende de la albúmina.",
+      hi: ["Mismas causas que el calcio total alto."], lo: ["Mismas causas que el calcio total bajo. En transfusión masiva o con citrato, baja por quelación."], t: ["hipercalcemia", "hipocalcemia"] },
+    { id: "p", n: "Fósforo (fosfato)", g: "m", al: "fosforo fosfato hiperfosfatemia", u: [{ k: "mg/dL", r: [3.0, 4.5], d: 1 }, { k: "mmol/L", r: [1.0, 1.5], d: 2 }],
+      w: "Fosfato en suero. Sube cuando el riñón no lo elimina.",
+      hi: ["ERC avanzada es la causa más común.", "Otras: hipoparatiroidismo, lisis tumoral, rabdomiólisis, acidosis, exceso de vitamina D.", "Con ERC: revisar dieta, quelantes y PTH; ver el tema de CKD-MBD."],
+      lo: ["Realimentación, alcoholismo, hiperparatiroidismo, déficit de vitamina D, uso excesivo de quelantes, pérdidas urinarias.", "Muy bajo puede dar debilidad y falla respiratoria."],
+      t: ["ckd-mbd"] },
+    { id: "mg", n: "Magnesio", g: "e", al: "magnesio hipomagnesemia", u: [{ k: "mg/dL", r: [1.3, 2.1], d: 1 }, { k: "mmol/L", r: [0.65, 1.05], d: 2 }],
+      w: "Magnesio sérico. Su déficit impide corregir potasio y calcio.",
+      lo: ["Diuréticos, inhibidores de la bomba de protones, alcohol, diarrea, aminoglucósidos, cisplatino, anfotericina B, tacrolimus y ciclosporina.", "Con potasio y calcio bajos persistentes, reponer magnesio."],
+      hi: ["Casi siempre ERC más antiácidos o laxantes con magnesio, o aporte IV (preeclampsia).", "Con valores muy altos: reflejos disminuidos, hipotensión, bradicardia."],
+      t: ["hipopotasemia", "hipocalcemia"] },
+    { id: "osm", n: "Osmolalidad sérica", g: "e", al: "osmolalidad osmolaridad", u: [{ k: "mOsm/kg", r: [285, 295], d: 0 }],
+      w: "Concentración total de solutos del plasma.",
+      lo: ["Con sodio bajo: hiponatremia hipotónica. Si la osmolalidad es normal o alta, buscar hiperglucemia o seudohiponatremia."], hi: ["Hipernatremia, hiperglucemia, urea alta o tóxicos osmóticamente activos (alcoholes)."],
+      x: "Brecha osmolar = osmolalidad medida − (2 × Na + glucosa/18 + BUN/2,8). Una brecha alta sugiere un tóxico: dato clásico, no verificado en esta revisión." },
+    { id: "crea", n: "Creatinina sérica", g: "r", al: "creatinina cr tfge", u: [{ k: "mg/dL", r: [0.6, 1.2], d: 2 }, { k: "µmol/L", r: [50, 110], d: 0 }],
+      w: "Producto del músculo que filtra el riñón. Estima la función renal, pero depende de la masa muscular.",
+      hi: ["Comparar con el valor basal: sube ≥0,3 mg/dL en 48 h o ≥1,5 veces en 7 días indica LRA.", "Causas: prerrenal, intrarrenal (necrosis tubular, nefritis, glomerular) y posrenal (obstrucción).", "Trimetoprima, cimetidina, tolvaptán y algunos inhibidores de quinasas suben la creatinina sin bajar la filtración real."],
+      lo: ["Poca masa muscular (ancianos, desnutrición, amputación), embarazo o hiperfiltración. Por eso la creatinina normal no descarta ERC: calcular la TFGe y pedir cistatina C si hace falta."],
+      t: ["lra", "erc"], x: "Calcula la TFGe con CKD-EPI en la pestaña Calcular." },
+    { id: "bun", n: "Urea / BUN", g: "r", al: "urea bun nitrogeno ureico", u: [{ k: "mg/dL (BUN)", r: [8, 23], d: 0 }, { k: "mmol/L (urea)", r: [2.9, 8.2], d: 1 }],
+      w: "Producto del metabolismo de la proteína. Se filtra y se reabsorbe en parte.",
+      hi: ["Prerrenal (deshidratación, insuficiencia cardiaca): sube más que la creatinina.", "Sangrado digestivo, corticoides, catabolismo, dieta con mucha proteína.", "ERC, LRA y obstrucción."],
+      lo: ["Hepatopatía grave, desnutrición, sobrehidratación o SIADH."], t: ["lra", "erc"] },
+    { id: "ua", n: "Ácido úrico", g: "r", al: "acido urico hiperuricemia gota", u: [{ k: "mg/dL", r: [2.0, 7.0], d: 1 }, { k: "µmol/L", r: [120, 420], d: 0 }],
+      w: "Producto final de las purinas. Se elimina sobre todo por el riñón.",
+      hi: ["ERC, diuréticos, alcohol, dieta rica en purinas, obesidad, lisis tumoral.", "Con cifras altas sin síntomas, no hay indicación sistemática de tratar; con gota o litiasis úrica, sí."],
+      lo: ["Fármacos uricosúricos, inhibidores de SGLT2, SIADH, tubulopatías (síndrome de Fanconi), poca ingesta."], t: ["litiasis"] },
+    { id: "glu", n: "Glucosa en ayunas", g: "r", al: "glucosa glucemia diabetes", u: [{ k: "mg/dL", r: [70, 99], d: 0, f: 1 }, { k: "mmol/L", r: [3.9, 5.5], d: 1, f: 18.016 }],
+      bands: [[70, "Baja", 2], [100, "Normal", 0], [126, "Prediabetes (100–125 mg/dL)", 1], [999, "En rango de diabetes (≥126 mg/dL; confirmar)", 3]],
+      w: "Glucosa en plasma tras al menos 8 h de ayuno.",
+      hi: ["Un solo valor no diagnostica: confirmar con una segunda muestra o HbA1c.", "Con glucosa muy alta mirar sodio (baja de forma falsa), cetonas y osmolalidad."], lo: ["Hipoglucemia: en ERC se prolonga por menor eliminación de insulina y de sulfonilureas.", "Revisar fármacos (insulina, sulfonilureas), ayuno y hepatopatía."],
+      t: ["nefropatia-diabetica", "antidiabeticos-tfge"], x: "Criterios ADA (vía Johns Hopkins Diabetes Guide): prediabetes 100–125; diabetes ≥126 mg/dL en ayunas." },
+    { id: "a1c", n: "Hemoglobina glucosilada (HbA1c)", g: "r", al: "hba1c a1c hemoglobina glicosilada glucosilada", u: [{ k: "%", r: [4.0, 5.6], d: 1 }],
+      bands: [[5.7, "Normal", 0], [6.5, "Prediabetes (5,7–6,4 %)", 1], [99, "En rango de diabetes (≥6,5 %; confirmar)", 3]],
+      w: "Promedio de glucosa de los últimos 2–3 meses.",
+      hi: ["Confirmar con otra prueba. Evalúa control: la meta depende del paciente."], lo: ["Anemia, hemólisis o ESA pueden alterarla; en ERC avanzada y diálisis su fiabilidad es menor (dato clásico, no verificado en esta revisión)."], t: ["nefropatia-diabetica"],
+      x: "El límite inferior 4,0 % es un valor práctico; la fuente solo define 5,7 y 6,5 %." },
+    { id: "alb", n: "Albúmina sérica", g: "r", al: "albumina hipoalbuminemia", u: [{ k: "g/dL", r: [3.5, 5.0], d: 1 }, { k: "g/L", r: [35, 50], d: 0 }],
+      w: "Proteína principal del plasma. Marca nutrición, inflamación y pérdidas.",
+      lo: ["Síndrome nefrótico (con proteinuria alta), hepatopatía, desnutrición, inflamación aguda, pérdidas intestinales y, en diálisis peritoneal, por el efluente.", "Hemodilución."], hi: ["Deshidratación."], t: ["sindrome-nefrotico"] },
+    { id: "prot", n: "Proteína total", g: "r", al: "proteinas totales", u: [{ k: "g/dL", r: [6.0, 8.0], d: 1 }, { k: "g/L", r: [60, 80], d: 0 }],
+      w: "Albúmina más globulinas.", hi: ["Con albúmina normal y globulinas altas: pedir electroforesis de proteínas (gammapatía, mieloma)."], lo: ["Mismas causas que la albúmina baja."] },
+    { id: "alt", n: "ALT (TGP)", g: "h", al: "alt tgp transaminasa", u: [{ k: "U/L", r: [5, 35], d: 0 }],
+      w: "Enzima del hígado.", hi: ["Hepatitis virales (B y C, importantes en diálisis), fármacos, esteatosis, alcohol.", "En tolvaptán, controlar ALT, AST y bilirrubina: suspender si suben (ver el tema de poliquistosis)."], lo: ["Sin importancia clínica habitual."] },
+    { id: "ast", n: "AST (TGO)", g: "h", al: "ast tgo transaminasa", u: [{ k: "U/L", r: [7, 40], d: 0 }],
+      w: "Enzima del hígado, también del músculo.", hi: ["Hígado, o músculo si la CK está alta (rabdomiólisis).", "Cociente AST/ALT >2 sugiere alcohol."], lo: ["Sin importancia clínica habitual."], t: ["rabdomiolisis"] },
+    { id: "fa", n: "Fosfatasa alcalina", g: "m", al: "fosfatasa alcalina fa alp", u: [{ k: "U/L", r: [40, 160], d: 0 }],
+      w: "Enzima del hueso y del hígado.", hi: ["Hueso: hiperparatiroidismo secundario con recambio alto, osteomalacia, Paget. Hígado: colestasis.", "Con GGT alta, el origen es hepático."], lo: ["Hipofosfatasia, déficit de zinc, enfermedad ósea adinámica (dato clásico, no verificado aquí)."], t: ["ckd-mbd"] },
+    { id: "bil", n: "Bilirrubina total", g: "h", al: "bilirrubina", u: [{ k: "mg/dL", r: [0.2, 1.3], d: 1 }, { k: "µmol/L", r: [3, 22], d: 0 }],
+      w: "Producto de la hemoglobina. Sube con hemólisis o colestasis.", hi: ["Hemólisis (indirecta alta, LDH alta, haptoglobina baja): pensar en microangiopatía trombótica si hay plaquetas bajas.", "Colestasis o hepatopatía (directa alta)."], lo: ["Sin importancia clínica."] },
+    { id: "ck", n: "Creatina quinasa (CK)", g: "h", al: "ck cpk creatinquinasa rabdomiolisis", sx: true, u: [{ k: "U/L", r: { M: [20, 215], F: [20, 160] }, d: 0 }],
+      w: "Enzima del músculo.", hi: ["Rabdomiólisis si es >5 veces el límite superior (dato clásico, no verificado aquí): trauma, ejercicio, estatinas, convulsiones, inmovilización.", "Riesgo de LRA: hidratación temprana."], lo: ["Sin importancia clínica."], t: ["rabdomiolisis"] },
+    { id: "col", n: "Colesterol total", g: "l", al: "colesterol", u: [{ k: "mg/dL", r: [0, 199], d: 0 }, { k: "mmol/L", r: [0, 5.1], d: 1 }],
+      w: "Colesterol total.", hi: ["Con síndrome nefrótico o hipotiroidismo, buscar causas secundarias antes de tratar."], lo: ["Desnutrición, hepatopatía, inflamación."], t: ["sindrome-nefrotico"], x: "El rango es «deseable». Las metas dependen del riesgo cardiovascular." },
+    { id: "ldl", n: "LDL", g: "l", al: "ldl colesterol", u: [{ k: "mg/dL", r: [0, 129], d: 0 }, { k: "mmol/L", r: [0, 3.3], d: 1 }],
+      w: "Colesterol LDL.", hi: ["Causas secundarias: nefrótico, hipotiroidismo, diabetes mal controlada, fármacos."], lo: ["Sin importancia clínica habitual."], x: "Rango «recomendado» de la fuente. La meta de LDL en ERC o con riesgo alto: no verificada aquí." },
+    { id: "tg", n: "Triglicéridos", g: "l", al: "trigliceridos", u: [{ k: "mg/dL", r: [40, 150], d: 0 }, { k: "mmol/L", r: [0.45, 1.71], d: 2 }],
+      w: "Triglicéridos en suero.", hi: ["Diabetes, síndrome nefrótico, alcohol, ERC, hipotiroidismo. Muy altos: riesgo de pancreatitis."], lo: ["Sin importancia clínica."], t: ["sindrome-nefrotico"] },
+    { id: "fe", n: "Hierro sérico", g: "b", al: "hierro sérico", sx: true, u: [{ k: "µg/dL", r: { M: [75, 175], F: [28, 162] }, d: 0 }, { k: "µmol/L", r: { M: [13, 31], F: [5, 29] }, d: 0 }],
+      w: "Hierro circulante, varía durante el día.", lo: ["Ferropenia o inflamación. Usar ferritina y TSAT, no el hierro solo."], hi: ["Hemocromatosis, hemólisis, hierro IV reciente."], t: ["anemia-erc"] },
+    { id: "tibc", n: "TIBC (capacidad de fijación del hierro)", g: "b", al: "tibc transferrina", u: [{ k: "µg/dL", r: [250, 410], d: 0 }, { k: "µmol/L", r: [45, 73], d: 0 }],
+      w: "Transferrina disponible para unir hierro.", hi: ["Ferropenia."], lo: ["Inflamación, desnutrición, nefrótico."], t: ["anemia-erc"], x: "TSAT = hierro ÷ TIBC × 100. Los objetivos en ERC están en el tema de anemia." },
+    { id: "fer", n: "Ferritina", g: "b", al: "ferritina", u: [{ k: "ng/mL", r: [20, 200], d: 0 }, { k: "µg/L", r: [20, 200], d: 0 }],
+      w: "Reserva de hierro; también sube con inflamación.", lo: ["Ferropenia verdadera."], hi: ["Inflamación, infección, hepatopatía, sobrecarga de hierro; en diálisis, sube con el hierro IV."], t: ["anemia-erc"], x: "En ERC y diálisis, los objetivos de ferritina y TSAT son distintos: ver el tema de anemia." },
+    { id: "hb", n: "Hemoglobina", g: "b", al: "hemoglobina hb anemia", sx: true, u: [{ k: "g/dL", r: { M: [14, 18], F: [12, 16] }, d: 1 }, { k: "g/L", r: { M: [140, 180], F: [120, 160] }, d: 0 }],
+      w: "Transportador de oxígeno de los glóbulos rojos.", lo: ["Anemia de la ERC es diagnóstico de exclusión: descartar ferropenia, sangrado, déficit de B12 o folato, hemólisis y hematológicas.", "VCM orienta: bajo (hierro, talasemia), alto (B12, folato, fármacos)."], hi: ["Deshidratación, policitemia, eritrocitosis postrasplante, tabaquismo o exceso de eritropoyetina."], t: ["anemia-erc"] },
+    { id: "hto", n: "Hematocrito", g: "b", al: "hematocrito hto", sx: true, u: [{ k: "%", r: { M: [40, 54], F: [37, 47] }, d: 0 }],
+      w: "Porcentaje de sangre ocupado por glóbulos rojos.", lo: ["Las mismas causas que la hemoglobina baja."], hi: ["Deshidratación o policitemia."], t: ["anemia-erc"] },
+    { id: "vcm", n: "VCM (volumen corpuscular medio)", g: "b", al: "vcm", u: [{ k: "fL", r: [76, 100], d: 0 }],
+      w: "Tamaño medio de los glóbulos rojos.", lo: ["Microcitosis: ferropenia, talasemia, inflamación crónica."], hi: ["Macrocitosis: déficit de B12 o folato, alcohol, hipotiroidismo, fármacos (micofenolato, azatioprina)."], t: ["anemia-erc"] },
+    { id: "ret", n: "Reticulocitos", g: "b", al: "reticulocitos", u: [{ k: "×10⁹/L", r: [25, 75], d: 0 }],
+      w: "Glóbulos rojos jóvenes: indican si la médula responde.", lo: ["Producción insuficiente: ERC, ferropenia, déficit vitamínico."], hi: ["Hemólisis o sangrado agudo."] },
+    { id: "leu", n: "Leucocitos", g: "b", al: "leucocitos globulos blancos", u: [{ k: "×10⁹/L", r: [3.5, 12.0], d: 1 }, { k: "/mm³", r: [3500, 12000], d: 0 }],
+      w: "Glóbulos blancos totales.", hi: ["Infección, inflamación, corticoides. Con fiebre en diálisis o trasplante, buscar el foco."], lo: ["Fármacos (micofenolato, azatioprina, valganciclovir), infección viral, lupus."], t: ["itu-trasplante"] },
+    { id: "plq", n: "Plaquetas", g: "b", al: "plaquetas trombocitopenia", u: [{ k: "×10⁹/L", r: [150, 400], d: 0 }, { k: "/mm³", r: [150000, 400000], d: 0 }],
+      w: "Células de la coagulación.", lo: ["Con anemia hemolítica y daño renal: descartar microangiopatía trombótica de inmediato.", "Otras: heparina (HIT), lupus, fármacos, hepatopatía."], hi: ["Inflamación, ferropenia, síndrome nefrótico."], t: ["sindrome-nefrotico"] },
+    { id: "vsg", n: "VSG", g: "b", al: "vsg velocidad sedimentacion", u: [{ k: "mm/h", r: [0, 15], d: 0 }],
+      w: "Marcador inflamatorio inespecífico.", hi: ["Infección, vasculitis, mieloma, lupus, anemia. Sube con la edad."], lo: ["Sin importancia clínica."], x: "Rango de la fuente para adultos. Varía con edad y sexo." },
+    { id: "inr", n: "INR", g: "c", al: "inr tp protrombina", u: [{ k: "—", r: [0.9, 1.1], d: 1 }],
+      w: "Vía extrínseca; vigila warfarina y la función hepática.", hi: ["Warfarina, hepatopatía, déficit de vitamina K, CID."], lo: ["Sin importancia clínica."] },
+    { id: "ttpa", n: "TTPa", g: "c", al: "ttpa aptt", u: [{ k: "s", r: [25, 40], d: 0 }],
+      w: "Vía intrínseca; vigila la heparina no fraccionada.", hi: ["Heparina, anticoagulante lúpico, déficit de factores."], lo: ["Sin importancia clínica."] },
+    { id: "ph", n: "pH arterial", g: "e", al: "ph gasometria", u: [{ k: "pH", r: [7.35, 7.45], d: 2 }],
+      w: "Acidez de la sangre arterial.", lo: ["Acidosis: mirar pCO₂ y bicarbonato para separar metabólica de respiratoria."], hi: ["Alcalosis: igual."], t: ["acidosis-metabolica"], x: "Usa la calculadora ácido-base en Calcular para brecha aniónica, delta-delta y Winter." },
+    { id: "pco2", n: "pCO₂ arterial", g: "e", al: "pco2 gasometria", u: [{ k: "mmHg", r: [35, 45], d: 0 }],
+      w: "Componente respiratorio del equilibrio ácido-base.", hi: ["Acidosis respiratoria o compensación de alcalosis metabólica."], lo: ["Alcalosis respiratoria o compensación de acidosis metabólica (fórmula de Winter)."], t: ["acidosis-metabolica"] },
+    { id: "po2", n: "pO₂ arterial", g: "e", al: "po2 oxigeno gasometria", u: [{ k: "mmHg", r: [80, 100], d: 0 }],
+      w: "Oxígeno disuelto en sangre arterial.", lo: ["Hipoxemia: buscar edema pulmonar, neumonía, embolia, hemorragia alveolar."], hi: ["Oxigenoterapia."] },
+    { id: "pth", n: "PTH (hormona paratiroidea)", g: "m", al: "pth paratohormona hiperparatiroidismo", u: [{ k: "pg/mL", r: [10, 65], d: 0 }, { k: "ng/L", r: [10, 65], d: 0 }],
+      w: "Controla calcio y fósforo.", hi: ["Hiperparatiroidismo secundario de la ERC, déficit de vitamina D, hipocalcemia. Con calcio alto, pensar en primario.", "En ERC, el rango normal no es la meta: ver CKD-MBD."], lo: ["Hipoparatiroidismo, hipercalcemia no paratiroidea, hipomagnesemia grave."], t: ["ckd-mbd"], x: "En ERC y diálisis los objetivos de PTH son distintos del rango normal." },
+    { id: "vitd", n: "Vitamina D (25-OH)", g: "m", al: "vitamina d 25oh calcifediol", u: [{ k: "ng/mL", r: [20, 50], d: 0, f: 1 }, { k: "nmol/L", r: [50, 125], d: 0, f: 0.4006 }],
+      bands: [[12, "Deficiencia (<12 ng/mL)", 3], [20, "Inadecuada (12–19 ng/mL)", 1], [50.01, "Adecuada (≥20 ng/mL)", 0], [999, "Alta (>50 ng/mL): posibles efectos adversos", 2]],
+      w: "Reserva de vitamina D.", lo: ["Poca exposición solar, malabsorción, síndrome nefrótico (pérdida de proteína transportadora), ERC."], hi: ["Exceso de suplementos: riesgo de hipercalcemia."], t: ["ckd-mbd"], x: "Cortes del Food and Nutrition Board (NIH ODS). En ERC, el nivel óptimo no está definido." },
+    { id: "tsh", n: "TSH", g: "t", al: "tsh tiroides hipotiroidismo", u: [{ k: "mIU/L", r: [0.4, 4.8], d: 2 }],
+      w: "Hormona hipofisaria que regula la tiroides.", hi: ["Hipotiroidismo (frecuente en ERC y síndrome nefrótico). Pedir T4 libre."], lo: ["Hipertiroidismo o supresión por enfermedad grave."] },
+    { id: "ft4", n: "T4 libre", g: "t", al: "t4 libre tiroxina", u: [{ k: "ng/dL", r: [1.0, 2.1], d: 1 }, { k: "pmol/L", r: [13, 27], d: 0 }],
+      w: "Hormona tiroidea activa.", hi: ["Hipertiroidismo."], lo: ["Hipotiroidismo."] },
+    { id: "acr", n: "Albuminuria (cociente albúmina/creatinina)", g: "o", al: "acr albuminuria microalbuminuria cociente albumina creatinina proteinuria", u: [{ k: "mg/g", r: [0, 29.9], d: 0, f: 1 }, { k: "mg/mmol", r: [0, 2.9], d: 1, f: 8.84 }],
+      bands: [[30, "A1: normal o ligeramente alta", 0], [300.01, "A2: moderadamente alta (30–300 mg/g)", 1], [9e9, "A3: muy alta (>300 mg/g)", 3]],
+      w: "Daño de la barrera glomerular. Se usa para clasificar y pronosticar la ERC.",
+      hi: ["Confirmar con otra muestra en 3 meses: fiebre, ejercicio, infección y menstruación la elevan.", "Causas: diabetes, hipertensión, glomerulopatías. A3 con edema e hipoalbuminemia: síndrome nefrótico.", "Si es alta, pedir sedimento urinario."], lo: ["Sin importancia clínica."], t: ["erc", "nefropatia-diabetica", "sindrome-nefrotico"], x: "Categorías KDIGO: A1 <30 mg/g (<3 mg/mmol), A2 30–300 (3–30), A3 >300 (>30). Orina de mañana." },
+    { id: "c3", n: "Complemento C3", g: "i", al: "c3 complemento", u: [{ k: "mg/dL", r: [90, 180], d: 0 }],
+      w: "Proteína central del complemento. Se consume cuando la vía alternativa o clásica se activa.",
+      lo: ["C3 bajo con C4 normal: glomerulonefritis posinfecciosa (típico en niños con hematuria y ASO), glomerulopatía C3 (vía alternativa).", "C3 y C4 bajos con proteinuria: nefritis lúpica clase III/IV (pedir anti-dsDNA), glomerulonefritis membranoproliferativa, crioglobulinemia mixta.", "En posinfecciosa, el C3 vuelve a lo normal en 8 a 12 semanas; si no vuelve, pensar en glomerulopatía C3 o MPGN (dato clásico, no verificado aquí)."],
+      hi: ["Sube con inflamación aguda (reactante de fase aguda): no tiene valor diagnóstico."], t: ["gl-lupica", "gl-c3g", "nefritico-gnrp"], x: "Rango habitual 90–180 mg/dL; varía mucho según el método. Otras fuentes dan 70–150 y 88–201 mg/dL. Usa el rango de tu laboratorio." },
+    { id: "c4", n: "Complemento C4", g: "i", al: "c4 complemento", u: [{ k: "mg/dL", r: [10, 40], d: 0 }],
+      w: "Componente de la vía clásica.", lo: ["Con C3 bajo: lupus, crioglobulinemia, MPGN por inmunocomplejos.", "C4 bajo con C3 normal: déficit hereditario o lupus de baja actividad."], hi: ["Reactante de fase aguda."], t: ["gl-lupica"], x: "Otras fuentes dan 16–47 mg/dL. Usa el rango de tu laboratorio." },
+    { id: "dna", n: "Anti-dsDNA", g: "i", al: "anti dsdna adn doble cadena lupus", u: [{ k: "UI/mL", r: [0, 4], d: 0 }],
+      bands: [[5, "Negativo (≤4 UI/mL)", 0], [10, "Indeterminado (5–9 UI/mL)", 1], [9e9, "Positivo (≥10 UI/mL)", 3]],
+      w: "Autoanticuerpo específico del lupus; sube con la actividad renal.", hi: ["Con C3/C4 bajos y proteinuria o sedimento activo: nefritis lúpica; la biopsia define la clase.", "Seguir su evolución junto con complemento."], lo: ["Negativo no descarta lupus."], t: ["gl-lupica"], x: "Cortes de un laboratorio comercial (Quest/Access); cada método tiene los suyos." },
+    { id: "ana", n: "ANA (título por IFI)", g: "i", al: "ana anticuerpos antinucleares titulo", u: [{ k: "título 1:x (escribe x)", r: [0, 39], d: 0 }],
+      bands: [[40, "Negativo (<1:40)", 0], [80.01, "Bajo (1:40 a 1:80)", 1], [9e9, "Elevado (>1:80)", 3]],
+      w: "Cribado de enfermedad autoinmune sistémica.", hi: ["Un ANA positivo no diagnostica: puede ser positivo en sanos. Pedir anti-dsDNA, anti-Sm y complemento si hay clínica de lupus.", "El patrón (homogéneo, moteado) orienta."], lo: ["Un ANA negativo hace poco probable el lupus."], t: ["gl-lupica"], x: "Escribe solo el número del título: para 1:160 escribe 160." },
+    { id: "pla2r", n: "Anti-PLA2R", g: "i", al: "pla2r anti pla2r nefropatia membranosa fosfolipasa", u: [{ k: "RU/mL", r: [0, 13.9], d: 1 }],
+      bands: [[14, "Negativo (<14)", 0], [20, "Dudoso (14–19,9): tratar como posible positivo y repetir", 1], [9e9, "Positivo (>19,9)", 3]],
+      w: "Anticuerpo contra el receptor de fosfolipasa A2, presente en la mayoría de las nefropatías membranosas primarias.", hi: ["Con síndrome nefrótico, apoya nefropatía membranosa primaria. Valorar si la biopsia puede evitarse según el contexto.", "Su título refleja actividad inmunológica y se sigue en el tiempo."], lo: ["Negativo no descarta membranosa (otros antígenos, como THSD7A, o causas secundarias)."], t: ["gl-membranosa", "sindrome-nefrotico"], x: "Cortes de un laboratorio (Northwell). Borderline se considera potencialmente positivo y se repite. No sirve por sí solo para monitorear el tratamiento según esa ficha." },
+    { id: "kap", n: "Cadenas ligeras libres kappa", g: "i", al: "cadenas ligeras kappa mieloma", u: [{ k: "mg/L", r: [3.3, 19.4], d: 1 }],
+      w: "Cadenas ligeras kappa libres en suero.", hi: ["Suben policlonalmente con ERC. Interpretar siempre con el cociente kappa/lambda.", "Con cociente anormal, pedir inmunofijación en suero y orina."], lo: ["Suprimidas por un clon lambda o inmunodeficiencia."], t: ["he-mieloma"] },
+    { id: "lam", n: "Cadenas ligeras libres lambda", g: "i", al: "cadenas ligeras lambda mieloma", u: [{ k: "mg/L", r: [5.7, 26.3], d: 1 }],
+      w: "Cadenas ligeras lambda libres en suero.", hi: ["Igual que kappa: mirar el cociente."], lo: ["Suprimidas por un clon kappa."], t: ["he-mieloma"] },
+    { id: "klr", n: "Cociente kappa/lambda", g: "i", al: "cociente kappa lambda cadenas ligeras", u: [{ k: "cociente", r: [0.26, 1.65], d: 2 }],
+      bands: [[0.26, "Bajo (<0,26): sospecha de clon lambda", 3], [1.66, "Normal (0,26–1,65)", 0], [3.11, "Alto para población general; dentro del rango ajustado a ERC (0,37–3,10)", 1], [9e9, "Alto incluso con el rango de ERC: sospecha de clon kappa", 3]],
+      w: "Relación entre cadenas ligeras. En ERC ambas suben y el cociente normal se desplaza hacia arriba.", hi: ["Cociente anormal con daño renal sin otra causa: pedir inmunofijación y valorar biopsia: mieloma, depósito de cadenas ligeras, amiloidosis AL."], lo: ["Con cociente bajo, el clon es lambda."], t: ["he-mieloma"], x: "Rango estándar 0,26–1,65; con ERC se usa 0,37–3,10 (hoja de un laboratorio hospitalario)." },
+    { id: "igg", n: "IgG", g: "i", al: "igg inmunoglobulina g", u: [{ k: "mg/dL", r: [694, 1618], d: 0 }],
+      w: "Inmunoglobulina principal del suero.", lo: ["Pérdida urinaria en síndrome nefrótico (con riesgo de infecciones), inmunosupresión, rituximab, inmunodeficiencia."], hi: ["Policlonal: inflamación crónica, hepatopatía, autoinmunidad. Monoclonal: pedir electroforesis e inmunofijación."], t: ["sindrome-nefrotico", "he-mieloma"], x: "La fuente no indica la edad del grupo: usa el rango de tu laboratorio." },
+    { id: "iga", n: "IgA", g: "i", al: "iga inmunoglobulina a", u: [{ k: "mg/dL", r: [68, 378], d: 0 }],
+      w: "Inmunoglobulina de las mucosas.", hi: ["Puede estar elevada en nefropatía por IgA, pero no la diagnostica; la biopsia lo hace."], lo: ["Déficit selectivo de IgA."], t: ["gl-iga"], x: "La fuente no indica la edad del grupo: usa el rango de tu laboratorio." },
+    { id: "igm", n: "IgM", g: "i", al: "igm inmunoglobulina m", u: [{ k: "mg/dL", r: [65, 263], d: 0 }],
+      w: "Primera inmunoglobulina en la respuesta inmune.", hi: ["Infección aguda, crioglobulinemia mixta, gammapatía IgM."], lo: ["Inmunodeficiencia."], t: ["he-mieloma"], x: "La fuente no indica la edad del grupo: usa el rango de tu laboratorio." }
+  ];
+  var FIX = {
+    k: { src: "UK Kidney Association: manejo de emergencia de la hiperpotasemia (2020); causas de hipopotasemia: síntesis clínica general" },
+    na: { src: "Guía europea de hiponatremia 2014 (resumen en HCPLive)", lo: ["Confirmar que es hipotónica y descartar hiperglucemia como causa.", "Osmolalidad urinaria <100 mOsm/kg: exceso relativo de agua (polidipsia).", "Osmolalidad urinaria >100: medir sodio urinario. Si es ≤30 mmol/L, volumen arterial efectivo bajo (pérdidas, insuficiencia cardiaca, cirrosis, nefrótico). Si es >30, valorar el volumen extracelular y los diuréticos (SIADH si el paciente está euvolémico).", "Puede haber más de una causa a la vez."] },
+    ca: { src: "Revisión de hipercalcemia (J Fam Pract 2018) y manual de práctica clínica", hi: ["Repetir para confirmar y corregir por albúmina: Ca corregido = Ca + 0,8 × (albúmina normal − albúmina del paciente). Medir calcio ionizado si hay duda.", "Revisar fármacos: tiazidas, litio, exceso de calcio; y deshidratación.", "Pedir PTH intacta. PTH alta o inapropiadamente normal: dependiente de PTH (hiperparatiroidismo primario, hipercalcemia hipocalciúrica familiar, déficit de vitamina D con hiperparatiroidismo secundario). PTH suprimida: independiente.", "Si es independiente: PTHrP (malignidad), 1,25-vitamina D (sarcoidosis, linfoma), mieloma, síndrome de leche y alcalinos, exceso de calcio.", "Si es dependiente: 25-OH vitamina D y cociente calcio/creatinina en orina de 24 h: <0,01 sugiere hipocalciuria familiar; >0,02, hiperparatiroidismo primario."], lo: ["Corregir por albúmina o medir calcio ionizado antes de decidir.", "Causas habituales: déficit de vitamina D, hipoparatiroidismo, ERC con hiperfosfatemia, hipomagnesemia, pancreatitis, fármacos.", "Pedir PTH, 25-OH vitamina D, fósforo y magnesio. ECG si QT largo o síntomas.", "Síntesis clínica general; no contrastada con una fuente en esta revisión."] },
+    p: { src: "UCSF Hospital Handbook (hipofosfatemia); causas de hiperfosfatemia: síntesis clínica general, no contrastada", lo: ["Definición: <2,4 mg/dL. Síntomas con depleción total y fósforo <1 mg/dL: debilidad, rabdomiólisis, alteración hematológica, confusión, convulsiones, disfunción cardiaca y respiratoria, íleo.", "Causas: menor absorción (déficit de vitamina D, alcohol, quelantes), desplazamiento al interior de las células (insulina, realimentación, alcalosis respiratoria, sepsis, síndrome del hueso hambriento), pérdida urinaria (hiperparatiroidismo, defecto tubular proximal, déficit de vitamina D) y terapias continuas de reemplazo renal.", "Si no es evidente: calcio, PTH y vitamina D; fracción excretada de fósforo >5 % o fósforo urinario de 24 h >100 mg sugiere pérdida renal.", "Tratar si <2 mg/dL; oral con 1–1,9; IV si <1 mg/dL."] },
+    mg: { src: "Australian Prescriber: «Magnesium: the forgotten electrolyte» (NPS MedicineWise)", lo: ["Causas digestivas: enfermedad inflamatoria intestinal, intestino corto, pancreatitis crónica, alcoholismo, nutrición enteral, vómitos o aspiración gástrica, quemaduras y síndrome del hueso hambriento tras paratiroidectomía.", "Pérdida renal: diuréticos de asa y tiazidas, aminoglucósidos, anfotericina B, pentamidina, inhibidores de calcineurina, diabetes, cetoacidosis, hipercalcemia, recuperación de necrosis tubular y síndromes de Bartter o Gitelman.", "Con K⁺ y Ca²⁺ bajos que no corrigen, reponer magnesio. También baja el fósforo.", "Magnesio urinario de 24 h >1,0 mmol o fracción excretada >2 % indica pérdida renal; <0,5 mmol o <2 % indica respuesta renal adecuada.", "Revisar K⁺, Ca²⁺, fósforo y sodio; ECG si hay arritmia."], hi: ["La causa más común es la insuficiencia renal.", "Exceso de aporte: dosis parenterales (eclampsia, torsades), antiácidos o catárticos con magnesio.", "Otras: litio, rabdomiólisis, hipercalcemia hipocalciúrica familiar.", "Efectos: pérdida de reflejos osteotendinosos, parálisis, íleo, retención urinaria, bradicardia e hipotensión."] },
+    crea: { src: "KDIGO 2012 de LRA (en el tema LRA) y revisión de fármacos que elevan la creatinina sin bajar la TFG", hi: ["Comparar con el valor basal: sube ≥0,3 mg/dL en 48 h o ≥1,5 veces en 7 días indica LRA.", "Causas: prerrenal, intrarrenal (necrosis tubular, nefritis, glomerular) y posrenal (obstrucción).", "Suben la creatinina sin bajar la filtración real: cimetidina, trimetoprima, pirimetamina y salicilatos (bloquean su secreción tubular); corticoides y vitamina D activa (cambian su producción). El tolvaptán da una subida leve y reversible (KDIGO 2025)."] },
+    a1c: { src: "Revisión sobre control glucémico en ERC (Front Endocrinol 2022)", lo: ["Puede estar falsamente baja con hierro y agentes estimulantes de la eritropoyesis (más recambio de glóbulos rojos).", "Puede estar falsamente alta con déficit de hierro o de B12.", "En ERC G4–G5 y diálisis la correlación con la glucosa media es menor.", "Alternativas: albúmina glucosilada, fructosamina (sesgadas por la albúmina baja) o monitorización continua (GMI), que KDIGO 2020 sugiere útil en G4–G5 y diálisis."], hi: ["Confirmar con otra prueba. Evalúa control: la meta depende del paciente.", "En ERC puede subestimar o sobrestimar la glucemia: ver la lista de «si está bajo».", "La carbamilación de la uremia puede alterar algunos métodos; la cromatografía líquida de alta presión (HPLC) evita el problema."] },
+    alt: { src: "Cleveland Clinic Journal of Medicine: enzimas hepáticas levemente elevadas", hi: ["Repetir para confirmar y revisar fármacos, alcohol y suplementos; si se sospecha, suspender y repetir a las 6–8 semanas.", "Causas: esteatosis hepática (la más común), alcohol, hepatitis B o C crónica, hemocromatosis, hepatitis autoinmune, enfermedad de Wilson (menores de 40), déficit de alfa-1 antitripsina, fármacos (AINE, estatinas).", "Pedir ecografía, anti-VHC (con ARN si es positivo) y HBsAg (con ADN si es positivo).", "Si sigue sin explicación: ferritina y saturación en hombres; ANA y anticuerpos de músculo liso en mujeres; ceruloplasmina en jóvenes. Considerar biopsia si persiste unos 6 meses.", "En tolvaptán, controlar ALT, AST y bilirrubina (KDIGO 2025)."] },
+    ast: { src: "Cleveland Clinic Journal of Medicine: enzimas hepáticas levemente elevadas", hi: ["Mismas causas y estudio que la ALT.", "AST más de 2 veces la ALT, sobre todo con GGT alta, sugiere daño por alcohol.", "El músculo también eleva la AST: pedir CK si se sospecha lesión muscular."] },
+    hb: { src: "KDIGO 2012 de anemia en ERC", lo: ["KDIGO define anemia en ERC con Hb <13,0 g/dL en hombres y <12,0 g/dL en mujeres, y pide confirmarla antes de estudiarla.", "Estudio inicial: hemograma completo con índices, reticulocitos absolutos, ferritina, TSAT, vitamina B12 y folato.", "Si no hay deficiencia ni otra causa, la anemia de la ERC es un diagnóstico de exclusión."], x: "El rango de referencia de arriba es el del laboratorio; el umbral KDIGO para anemia en ERC es 13 g/dL en hombres y 12 g/dL en mujeres." }
+  };
+  Object.keys(FIX).forEach(function (k) { var l = L.filter(function (z) { return z.id === k; })[0]; if (l) Object.keys(FIX[k]).forEach(function (f) { l[f] = FIX[k][f]; }); });
+  var byId = {}; L.forEach(function (x) { byId[x.id] = x; });
+  function esc2(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function numOf(v) { var x = parseFloat(String(v || "").replace(",", ".")); return isFinite(x) ? x : NaN; }
+  function fm(n, d) { var s = n.toFixed(d == null ? 1 : d); return s.replace(".", ","); }
+  var COL = ["#2E9E6B", "#D9A406", "#E07B1A", "#C8372D"];
+  function rangeOf(l, ui) { var r = l.u[ui].r; return Array.isArray(r) ? r : r[LABQ.sex === "F" ? "F" : "M"]; }
+  function row(k, v, c) { return '<div class="gr-r" style="--gc:' + c + '"><span class="gr-k">' + k + '</span><span class="gr-v">' + v + '</span></div>'; }
+  function resultHTML() {
+    var l = byId[LABQ.sel]; if (!l) return "";
+    var ui = Math.min(LABQ.ui, l.u.length - 1), u = l.u[ui], r = rangeOf(l, ui), v = numOf(LABQ.val), d = u.d;
+    var h = '<div class="gr st">';
+    if (!isFinite(v)) h += row("Rango de referencia", fm(r[0], d) + " – " + fm(r[1], d) + " " + esc2(u.k) + (l.sx ? (LABQ.sex === "F" ? " (mujer)" : " (hombre)") : ""), "#2F6FBF") + row("Estado", "Escribe el valor para ver si está en rango.", "#2F6FBF");
+    else {
+      var st, c;
+      if (l.bands) {
+        var vb = v * (u.f == null ? 1 : u.f), b = l.bands, i = 0; while (i < b.length - 1 && vb >= b[i][0]) i++;
+        st = b[i][1]; c = COL[b[i][2]];
+      } else if (v < r[0]) { st = "BAJO"; c = COL[2]; }
+      else if (v > r[1]) { st = "ALTO"; c = COL[2]; }
+      else { st = "En rango"; c = COL[0]; }
+      h += row("Resultado", '<b>' + fm(v, d) + " " + esc2(u.k) + " · " + st + "</b>", c) + row("Rango de referencia", fm(r[0], d) + " – " + fm(r[1], d) + " " + esc2(u.k) + (l.sx ? (LABQ.sex === "F" ? " (mujer)" : " (hombre)") : ""), "#2F6FBF");
+    }
+    h += '</div>';
+    var out = "alto";
+    h += '<section class="hd-card"><b class="fm-h">Qué mide</b><p>' + esc2(l.w) + '</p></section>';
+    function lst(t, a) { return a && a.length ? '<section class="hd-card"><b class="fm-h">' + t + '</b><ul>' + a.map(function (z) { return "<li>" + esc2(z) + "</li>"; }).join("") + "</ul></section>" : ""; }
+    var isLow = isFinite(v) && v < r[0], isHigh = isFinite(v) && v > r[1];
+    if (isLow) h += lst("En qué pensar: está bajo", l.lo) + lst("Si estuviera alto", l.hi);
+    else if (isHigh) h += lst("En qué pensar: está alto", l.hi) + lst("Si estuviera bajo", l.lo);
+    else h += lst("Si está alto", l.hi) + lst("Si está bajo", l.lo);
+    if (l.x) h += '<p class="hd-note">' + esc2(l.x) + '</p>';
+    h += '<p class="hd-note">Fuente de «en qué pensar»: ' + (l.src ? esc2(l.src) : 'síntesis clínica general, no contrastada con una guía en esta revisión') + '.</p>';
+    if (l.t) { var bt = l.t.filter(function (id) { return DATA.some(function (z) { return z.id === id; }); }); if (bt.length) h += '<div class="dactions">' + bt.map(function (id) { var t = DATA.filter(function (z) { return z.id === id; })[0]; return '<button class="btn ghost" type="button" data-lt="' + id + '">Ver: ' + esc2(t.title) + '</button>'; }).join("") + '</div>'; }
+    return h;
+  }
+  var GROUPS = [
+    ["hema", "Hematología", "Hemoglobina, plaquetas, hierro", ["hb", "hto", "vcm", "ret", "leu", "plq", "vsg", "fe", "tibc", "fer"]],
+    ["quim", "Química sanguínea", "Creatinina, urea, glucosa, albúmina", ["crea", "bun", "ua", "glu", "a1c", "alb", "prot"]],
+    ["elec", "Electrolitos y ácido-base", "Sodio, potasio, bicarbonato, gasometría", ["na", "k", "cl", "hco3", "mg", "osm", "ph", "pco2", "po2"]],
+    ["oseo", "Mineral y óseo", "Calcio, fósforo, PTH, vitamina D", ["ca", "cai", "p", "fa", "pth", "vitd"]],
+    ["higa", "Hígado y músculo", "ALT, AST, bilirrubina, CK", ["alt", "ast", "bil", "ck"]],
+    ["lip", "Lípidos", "Colesterol, LDL, triglicéridos", ["col", "ldl", "tg"]],
+    ["horm", "Hormonas", "TSH, T4 libre", ["tsh", "ft4"]],
+    ["coag", "Coagulación", "INR, TTPa", ["inr", "ttpa"]],
+    ["ori", "Orina", "Albuminuria", ["acr"]],
+    ["imun", "Inmunología", "Complemento, anti-dsDNA, ANA, PLA2R, cadenas ligeras", ["c3", "c4", "dna", "ana", "pla2r", "kap", "lam", "klr", "igg", "iga", "igm"]]
+  ];
+  function norm(t) { return String(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim(); }
+
+  var PANEL_IDS = ["na", "k", "cl", "hco3", "crea", "bun", "ca", "p", "mg", "alb", "glu", "ua", "hb", "leu", "plq", "pth"];
+  LABQ.panel = LABQ.panel || {}; LABQ.pextra = LABQ.pextra || [];
+  function evalLab(l, ui, v) {
+    var u = l.u[ui], r = rangeOf(l, ui), st, c;
+    if (l.bands) { var vb = v * (u.f == null ? 1 : u.f), b = l.bands, i = 0; while (i < b.length - 1 && vb >= b[i][0]) i++; st = b[i][1]; c = b[i][2] === 0 ? 0 : b[i][2]; var ok = b[i][2] === 0; return { st: st, c: COL[c], ok: ok, dir: ok ? 0 : 1 }; }
+    if (v < r[0]) return { st: "BAJO", c: COL[2], ok: false, dir: -1 };
+    if (v > r[1]) return { st: "ALTO", c: COL[2], ok: false, dir: 1 };
+    return { st: "En rango", c: COL[0], ok: true, dir: 0 };
+  }
+  function panelIds() { return PANEL_IDS.concat(LABQ.pextra.filter(function (i) { return PANEL_IDS.indexOf(i) < 0; })); }
+  function panelRow(id) {
+    var l = byId[id], pv = LABQ.panel[id] || { val: "", ui: 0 };
+    return '<div class="lbp-r" id="lbp-' + id + '"><div class="lbp-n">' + esc2(l.n) + '</div><div class="lbp-i"><input type="text" inputmode="decimal" autocomplete="off" data-pv="' + id + '" value="' + String(pv.val).replace(/"/g, "") + '" aria-label="' + esc2(l.n) + '">' +
+      (l.u.length > 1 ? '<select data-pu="' + id + '" aria-label="Unidad">' + l.u.map(function (z, i) { return '<option value="' + i + '"' + (i === pv.ui ? " selected" : "") + ">" + esc2(z.k) + "</option>"; }).join("") + '</select>' : '<span class="lbp-u">' + esc2(l.u[0].k) + '</span>') + '</div><div class="lbp-f" data-pf="' + id + '"></div></div>';
+  }
+  function panelFlag(id) {
+    var l = byId[id], pv = LABQ.panel[id], v = pv ? numOf(pv.val) : NaN, f = document.querySelector('[data-pf="' + id + '"]'); if (!f) return;
+    if (!isFinite(v)) { f.innerHTML = ""; f.className = "lbp-f"; return; }
+    var e = evalLab(l, pv.ui || 0, v); f.className = "lbp-f " + (e.ok ? "ok" : "bad"); f.style.setProperty("--gc", e.c);
+    f.innerHTML = '<b>' + esc2(e.st) + '</b>' + (e.ok ? "" : ' <button type="button" class="lbp-go" data-pg="' + id + '">ver</button>');
+  }
+  function panelSummary() {
+    var bad = [], n = 0;
+    panelIds().forEach(function (id) { var pv = LABQ.panel[id], v = pv ? numOf(pv.val) : NaN; if (!isFinite(v)) return; n++; var e = evalLab(byId[id], pv.ui || 0, v); if (!e.ok) bad.push('<button type="button" class="lbp-chip" style="--gc:' + e.c + '" data-pg="' + id + '">' + esc2(byId[id].n) + ': ' + esc2(e.st) + '</button>'); });
+    var el = document.getElementById("lbp-sum"); if (!el) return;
+    el.innerHTML = n ? '<b>' + n + ' valores</b>. ' + (bad.length ? 'Fuera de rango: ' + bad.length + '.<div class="lbp-chips">' + bad.join("") + '</div>' : 'Todos en rango.') : 'Escribe los valores que tengas. Deja en blanco los que no.';
+  }
+  function panelHTML() {
+    var extra = L.filter(function (x) { return panelIds().indexOf(x.id) < 0; });
+    return '<button class="btn ghost" type="button" id="lb-up">← Todos los grupos</button><div class="cat" style="margin:12px 0 6px">Panel: varios valores</div>' +
+      '<p class="intro">Escribe los resultados que tengas y elige la unidad de cada uno. Las alteraciones aparecen en vivo y puedes tocar «ver» para el detalle.</p>' +
+      '<label class="hd-f"><span>Sexo (para hemoglobina, hierro, CK)</span><select id="lbp-sex"><option value="M"' + (LABQ.sex === "M" ? " selected" : "") + '>Hombre</option><option value="F"' + (LABQ.sex === "F" ? " selected" : "") + '>Mujer</option></select></label>' +
+      '<div class="hd-card" id="lbp-sum"></div><div id="lbp-rows">' + panelIds().map(panelRow).join("") + '</div>' +
+      '<label class="hd-f"><span>Añadir otro examen</span><select id="lbp-add"><option value="">Elegir…</option>' + extra.map(function (x) { return '<option value="' + x.id + '">' + esc2(x.n) + '</option>'; }).join("") + '</select></label>' +
+      '<button class="btn ghost" type="button" id="lbp-clear">Borrar el panel</button>';
+  }
+  function examRows(items) {
+    return '<div class="list">' + items.map(function (x) { return '<button class="row" type="button" data-lb="' + x.id + '"><span class="row-main"><span class="row-title">' + esc2(x.n) + '</span><span class="row-sum">' + x.u.map(function (z) { return z.k; }).join(" · ") + '</span></span><span class="row-go" aria-hidden="true">›</span></button>'; }).join("") + '</div>';
+  }
+  function listHTML() {
+    var q = norm(LABQ.q);
+    if (q) {
+      var items = L.filter(function (x) { return norm(x.n + " " + x.al).indexOf(q) >= 0; });
+      return items.length ? examRows(items) : '<p class="hd-note">No hay un examen con ese nombre. Prueba con otra palabra.</p>';
+    }
+    if (state.lg) {
+      var g = GROUPS.filter(function (z) { return z[0] === state.lg; })[0];
+      if (g) return '<button class="btn ghost" type="button" id="lb-up">← Todos los grupos</button><div class="cat" style="margin:12px 0 6px">' + g[1] + '</div>' + examRows(g[3].map(function (id) { return byId[id]; }));
+    }
+    return '<div class="list">' + GROUPS.map(function (g) { return '<button class="row" type="button" data-lg="' + g[0] + '"><span class="row-main"><span class="row-title">' + g[1] + '</span></span><span class="row-go" aria-hidden="true">›</span></button>'; }).join("") + '</div>';
+  }
+  function formHTML() {
+    var l = byId[LABQ.sel]; if (!l) return "";
+    return '<button class="btn ghost" type="button" id="lb-up">← Volver a la lista</button><div class="hd-card"><b class="fm-h">' + esc2(l.n) + '</b><div class="hd-grid">' +
+      '<label class="hd-f"><span>Valor</span><input type="text" inputmode="decimal" autocomplete="off" id="lb-val" value="' + String(LABQ.val).replace(/"/g, "") + '"></label>' +
+      '<label class="hd-f"><span>Unidad</span><select id="lb-ui">' + l.u.map(function (z, i) { return '<option value="' + i + '"' + (i === LABQ.ui ? " selected" : "") + ">" + esc2(z.k) + "</option>"; }).join("") + '</select></label>' +
+      (l.sx ? '<label class="hd-f"><span>Sexo</span><select id="lb-sx"><option value="M"' + (LABQ.sex === "M" ? " selected" : "") + '>Hombre</option><option value="F"' + (LABQ.sex === "F" ? " selected" : "") + '>Mujer</option></select></label>' : '') +
+      '</div></div><div id="lb-res"></div>';
+  }
+  window.renderLab = function () {
+    if (LABQ.sel !== (state.lx || null)) { LABQ.sel = state.lx || null; LABQ.val = ""; LABQ.ui = 0; }
+    var home = !LABQ.sel && !state.lg;
+    var h = '<article class="detail"><div class="cat">Laboratorio</div><h1>' + (home ? 'Laboratorio' : 'Interpretar un resultado') + '</h1>';
+    if (home) h += '<section class="lb-sec" style="--lc:#12908E"><h2>Conversor de unidades</h2><p class="lb-sd">Pasa un valor entre mg/dL y mmol/L o µmol/L.</p><div class="list"><button class="row" type="button" data-lt="calc-unidades"><span class="row-main"><span class="row-title">Conversor de unidades</span></span><span class="row-go" aria-hidden="true">›</span></button></div></section>' +
+      '<section class="lb-sec" style="--lc:#2F6FBF"><h2>Interpretar un resultado</h2><p class="lb-sd">Elige un grupo o busca el examen. Escribe el valor: te digo si está en rango, qué mide y en qué pensar.</p>';
+    if (LABQ.sel) h += formHTML();
+    else h += '<label class="hd-f"><span>Buscar examen</span><input type="text" id="lb-q" autocomplete="off" placeholder="Por ejemplo: potasio, PTH, hemoglobina" value="' + LABQ.q.replace(/"/g, "") + '"></label><div id="lb-list">' + listHTML() + '</div>';
+    if (home) h += '</section>';
+    h += '<p class="hd-note">Rangos de adulto: Royal College of Physicians and Surgeons of Canada (apéndice A); complemento, autoanticuerpos, cadenas ligeras e inmunoglobulinas: hojas de laboratorio y artículos citados en la app; vitamina D: NIH ODS; glucosa y HbA1c: ADA; albuminuria: KDIGO. Usa el rango de tu laboratorio si es distinto. Las explicaciones de «en qué pensar» indican su fuente; las que no la tienen son una síntesis clínica general. Apoyo a la decisión; no sustituye el juicio clínico.</p></article>';
+    $("#view").innerHTML = h;
+    if (LABQ.sel) { var r = document.getElementById("lb-res"); if (r) r.innerHTML = resultHTML(); }
+    if (state.lg === "panel" && !LABQ.sel) { panelIds().forEach(panelFlag); panelSummary(); }
+  };
+  $("#view").addEventListener("input", function (e) {
+    if (state.mode !== "lab" || state.open) return;
+    if (e.target.id === "lb-q") { LABQ.q = e.target.value; document.getElementById("lb-list").innerHTML = listHTML(); }
+    if (e.target.id === "lb-val") { LABQ.val = e.target.value; document.getElementById("lb-res").innerHTML = resultHTML(); }
+    var pv = e.target.getAttribute && e.target.getAttribute("data-pv");
+    if (pv) { LABQ.panel[pv] = LABQ.panel[pv] || { val: "", ui: 0 }; LABQ.panel[pv].val = e.target.value; panelFlag(pv); panelSummary(); }
+  });
+  $("#view").addEventListener("change", function (e) {
+    if (state.mode !== "lab" || state.open) return;
+    if (e.target.id === "lb-ui") { LABQ.ui = parseInt(e.target.value, 10) || 0; document.getElementById("lb-res").innerHTML = resultHTML(); }
+    if (e.target.id === "lb-sx") { LABQ.sex = e.target.value; document.getElementById("lb-res").innerHTML = resultHTML(); }
+    if (e.target.id === "lbp-sex") { LABQ.sex = e.target.value; panelIds().forEach(panelFlag); panelSummary(); }
+    var pu = e.target.getAttribute && e.target.getAttribute("data-pu");
+    if (pu) { LABQ.panel[pu] = LABQ.panel[pu] || { val: "", ui: 0 }; LABQ.panel[pu].ui = parseInt(e.target.value, 10) || 0; panelFlag(pu); panelSummary(); }
+    if (e.target.id === "lbp-add" && e.target.value) { LABQ.pextra.push(e.target.value); renderLab(); }
+  });
+  $("#view").addEventListener("click", function (e) {
+    if (state.mode !== "lab") return;
+    var t = e.target.closest && e.target.closest("[data-lt]");
+    if (t) { openTopic(t.getAttribute("data-lt")); return; }
+    if (state.open) return;
+    var pg2 = e.target.closest && e.target.closest("[data-pg]");
+    if (pg2) { var pid = pg2.getAttribute("data-pg"), pp = LABQ.panel[pid] || { val: "", ui: 0 }; LABQ.sel = pid; LABQ.val = pp.val; LABQ.ui = pp.ui || 0; state.lx = pid; render(); window.scrollTo(0, 0); return; }
+    if (e.target.closest && e.target.closest("#lbp-clear")) { LABQ.panel = {}; LABQ.pextra = []; renderLab(); return; }
+    var g = e.target.closest && e.target.closest("[data-lg]");
+    if (g) { state.lg = g.getAttribute("data-lg"); render(); window.scrollTo(0, 0); return; }
+    var b = e.target.closest && e.target.closest("[data-lb]");
+    if (b) { state.lx = b.getAttribute("data-lb"); render(); window.scrollTo(0, 0); var i = document.getElementById("lb-val"); if (i) i.focus(); return; }
+    if (e.target.closest && e.target.closest("#lb-up")) { if (state.lx) state.lx = null; else state.lg = null; LABQ.q = ""; render(); window.scrollTo(0, 0); }
+  });
+  var _rd2 = renderDetail;
+  renderDetail = function (t) {
+    _rd2.apply(this, arguments);
+    if (state.mode === "lab") { var bb = document.getElementById("back"); if (bb) bb.textContent = "← Laboratorio"; }
+  };
+})();
+/*ENDLABMOD*/
+
 /*BACKNAV*/
 (function () {
   var cur = null, popping = false;
-  function sig() { return { m: state.mode || "temas", c: state.cat, o: state.open || null, g: state.grp || null }; }
-  function same(a, b) { return a && b && a.m === b.m && a.c === b.c && a.o === b.o && a.g === b.g; }
-  try { cur = sig(); history.replaceState({ nx: cur }, ""); } catch (e) {}
+  function sig() { return { m: state.mode || "temas", c: state.cat, o: state.open || null, g: state.grp || null, l: (state.lg || "") + "|" + (state.lx || "") }; }
+  function same(a, b) { return a && b && a.m === b.m && a.c === b.c && a.o === b.o && a.g === b.g && a.l === b.l; }
+  try { cur = sig(); history.replaceState({ nx: cur, base: 1 }, ""); history.pushState({ nx: cur }, ""); } catch (e) {}
   var base = render;
   render = function () {
     base.apply(this, arguments);
@@ -5034,13 +5766,14 @@ var CALQ = { v: {} };
     popping = true;
     try {
       var modeChanged = state.mode !== s.m;
-      state.mode = s.m; state.cat = s.c; state.open = s.o; state.grp = s.g;
+      state.mode = s.m; state.cat = s.c; state.open = s.o; state.grp = s.g; var pl = (s.l || "|").split("|"); state.lg = pl[0] || null; state.lx = pl[1] || null;
       if (modeChanged && typeof applyMode === "function") applyMode();
       try { renderChips(); } catch (e) {}
       base();
       window.scrollTo(0, 0);
     } catch (e) {}
     popping = false; cur = s;
+    try { if (ev.state && ev.state.base) history.pushState({ nx: s }, ""); } catch (e) {}
   });
 })();
 /*ENDBACKNAV*/
