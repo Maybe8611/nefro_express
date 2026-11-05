@@ -175,6 +175,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .dl-seg button + button { border-left: 1px solid var(--line); }
 .dl-seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
 .dl-act { margin-top: 16px; }
+.qc textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: transparent; color: var(--ink); }
+.qc-f { padding: 8px 10px; border-radius: 8px; margin: 6px 0; border: 1px solid var(--warn-line); background: var(--warn-bg); color: var(--warn-ink); }
+.qc-f.crit { border-color: var(--crit-line); background: var(--crit-bg); color: var(--crit-ink); font-weight: 600; }
+.qc-h { margin: 14px 0 6px; font-size: 1rem; }
+.qc-t { border: 1px solid var(--line); border-radius: 10px; padding: 10px; margin: 8px 0; }
+.qc-t p { margin: 6px 0; }
+.qc-q { margin: 4px 0 8px 18px; padding: 0; }
 .dactions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; align-items: center; }
 .discuss { margin-top: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
 .dtitle { font-family: var(--font-display); font-size: 1.1rem; margin: 0 0 4px; }
@@ -965,7 +972,7 @@ html.home-navy .golink.gl8[class]>span{border-left-color:rgb(30,150,100)!importa
       </div>
     </details>
 <div id="nx-share" style="margin:12px 0 0"><button class="btn ghost" type="button" id="nx-share-btn">Compartir la app</button><div id="nx-share-out" hidden style="margin-top:8px"><p class="hd-note" style="margin:0 0 6px">Mantén pulsado el enlace, selecciónalo y cópialo:</p><input type="text" id="nx-share-url" readonly value="https://nefroexpress.github.io/nefro_express/" style="width:100%;box-sizing:border-box;font:inherit;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:inherit"></div></div>
-<p class="nxver" style="margin:10px 0 0;font-size:.74rem;opacity:.75">Versión de la app: 5 nov 2026 · diálisis unificada (HD y diálisis peritoneal) con prescripción objetiva al final y PDF con datos del médico y la clínica, calculadora de diálisis retirada de Calcular, botón para compartir la app, portada al compartir el enlace, pestaña Labs más limpia, urgencia hipertensiva, infección del catéter de HD, infecciones urinarias en ERC y trasplante, vacunas y tratamiento conservador nuevos, clasificaciones en cuadros, calculadoras unidas en «Calcular», con mg/dL y mmol/L; infusiones (furosemida, noradrenalina, heparina) y goteo; sin déficit de hierro</p>
+<p class="nxver" style="margin:10px 0 0;font-size:.74rem;opacity:.75">Versión de la app: 5 nov 2026 · «Caso rápido» en Guardia (escribe el caso y recibe la conducta sin llenar el informe), diálisis unificada (HD y diálisis peritoneal) con prescripción objetiva al final y PDF con datos del médico y la clínica, calculadora de diálisis retirada de Calcular, botón para compartir la app, portada al compartir el enlace, pestaña Labs más limpia, urgencia hipertensiva, infección del catéter de HD, infecciones urinarias en ERC y trasplante, vacunas y tratamiento conservador nuevos, clasificaciones en cuadros, calculadoras unidas en «Calcular», con mg/dL y mmol/L; infusiones (furosemida, noradrenalina, heparina) y goteo; sin déficit de hierro</p>
   </footer>
 </div>
 
@@ -4984,6 +4991,7 @@ try {
     else html += SECTIONS[G.step]();
     html += pager();
     html += '<div class="gd-foot"><button type="button" class="btn ghost" id="gd-new">' + (G.clr ? "Pulsa otra vez para borrar el caso" : "Nuevo caso") + '</button><span class="gd-note">Los datos del paciente solo se guardan mientras la pestaña esté abierta.</span></div></article>';
+    if (window.qcHTML) html += qcHTML();
     v.innerHTML = html;
   }
   function refreshLive() { var l = document.getElementById("gd-live"); if (l) l.innerHTML = liveBox(); }
@@ -5848,6 +5856,83 @@ var LABQ = { sel: null, q: "", val: "", ui: 0, sex: "M" };
   });
 })();
 /*ENDSHAREMOD*/
+/*QCMOD*/
+var QC = { txt: "", out: "" };
+function qcN(s) { return parseFloat(String(s).replace(",", ".")); }
+function qcFind(txt, re) { var m = txt.match(re); return m ? qcN(m[1]) : NaN; }
+var QC_STOP = " con sin por para una uno los las del que esta este como mas pero desde hace dias horas paciente anos edad mujer hombre masculino femenino presenta refiere viene llega ingresa antecedente antecedentes historia cuadro tiene y de la el en un se su al lo a o ".split(" ");
+function qcAnalyze(raw) {
+  var tx = norm(raw), flags = [], boost = {}, ask = [];
+  function fl(sev, msg, id) { flags.push({ sev: sev, msg: msg, id: id }); if (id) boost[id] = (boost[id] || 0) + (sev === "crit" ? 700 : 300); }
+  var k = qcFind(tx, /(?:\bk\b|potasio)\s*(?:de|=|:)?\s*(\d+[.,]?\d*)/), na = qcFind(tx, /(?:\bna\b|sodio)\s*(?:de|=|:)?\s*(\d{2,3})/),
+      ph = qcFind(tx, /\bph\s*(?:de|=|:)?\s*(\d[.,]\d+)/), hco = qcFind(tx, /(?:hco3|bicarbonato|bica)\s*(?:de|=|:)?\s*(\d+[.,]?\d*)/),
+      ca = qcFind(tx, /(?:\bca\b|calcio)\s*(?:de|=|:)?\s*(\d+[.,]?\d*)/), hb = qcFind(tx, /(?:\bhb\b|hemoglobina)\s*(?:de|=|:)?\s*(\d+[.,]?\d*)/),
+      cr = qcFind(tx, /(?:\bcr\b|creatinina)\s*(?:de|=|:)?\s*(\d+[.,]?\d*)/), gl = qcFind(tx, /(?:glucosa|glicemia|glucemia)\s*(?:de|=|:)?\s*(\d+)/);
+  var pa = tx.match(/(?:\bpa\b|presion|tension)?\s*(\d{2,3})\s*\/\s*(\d{2,3})/), sis = pa ? +pa[1] : NaN, dia = pa ? +pa[2] : NaN;
+  var ecg = /ecg|electrocardiograma|ondas t|qrs|bradicard/.test(tx);
+  if (isFinite(k)) {
+    if (k >= 6.5) fl("crit", "Potasio " + k + " mEq/L: hiperpotasemia grave (≥6,5).", "hiperpotasemia");
+    else if (k >= 5.5) fl("warn", "Potasio " + k + " mEq/L: hiperpotasemia (≥5,5).", "hiperpotasemia");
+    else if (k < 3) fl("crit", "Potasio " + k + " mEq/L: hipopotasemia grave (<3,0).", "hipopotasemia");
+    else if (k < 3.5) fl("warn", "Potasio " + k + " mEq/L: hipopotasemia (<3,5).", "hipopotasemia");
+    if (k >= 5.5 && !ecg) ask.push("¿Qué muestra el ECG? Define la urgencia de la hiperpotasemia.");
+  }
+  if (isFinite(na) && na >= 100 && na <= 190) {
+    if (na < 125) fl("crit", "Sodio " + na + " mEq/L: hiponatremia grave (<125).", "hiponatremia");
+    else if (na < 135) fl("warn", "Sodio " + na + " mEq/L: hiponatremia (<135).", "hiponatremia");
+    else if (na > 145) fl(na > 160 ? "crit" : "warn", "Sodio " + na + " mEq/L: hipernatremia (>145).", "hipernatremia");
+    if (na < 135 && !/convuls|coma|confus|somnol|asintomat|nausea|cefalea/.test(tx)) ask.push("¿Hay síntomas neurológicos? Decide si el tratamiento es urgente.");
+  }
+  if (isFinite(ph) && ph < 7.35) fl(ph < 7.2 ? "crit" : "warn", "pH " + ph + ": acidemia" + (ph < 7.2 ? " grave (<7,2)." : "."), "acidosis-metabolica");
+  if (isFinite(hco) && hco < 22 && hco > 2) fl(hco < 12 ? "crit" : "warn", "Bicarbonato " + hco + " mmol/L: bajo (<22).", "acidosis-metabolica");
+  if (isFinite(ca)) { if (ca > 10.5 && ca < 20) fl(ca >= 14 ? "crit" : "warn", "Calcio " + ca + " mg/dL: elevado (>10,5). Corrige por albúmina.", "hipercalcemia"); else if (ca < 8.4 && ca > 3) fl(ca < 7 ? "crit" : "warn", "Calcio " + ca + " mg/dL: bajo (<8,4). Corrige por albúmina.", "hipocalcemia"); }
+  if (isFinite(hb) && hb < 7) fl("crit", "Hemoglobina " + hb + " g/dL: anemia grave (<7).", "anemia-erc");
+  else if (isFinite(hb) && hb < 10 && hb > 2) fl("warn", "Hemoglobina " + hb + " g/dL: anemia.", "anemia-erc");
+  if (isFinite(sis) && sis >= 180 || isFinite(dia) && dia >= 120) fl("crit", "PA " + sis + "/" + dia + " mmHg: rango de crisis hipertensiva (≥180/120).", "hta-emergencia");
+  if (isFinite(sis) && sis < 90) fl("crit", "PA " + sis + "/" + dia + " mmHg: hipotensión (<90).", "lra");
+  if (isFinite(gl) && gl >= 250) ask.push("Glucosa " + gl + " mg/dL: ¿cetonas o pH? Descarta cetoacidosis.");
+  if (isFinite(cr) && !/basal|previa|habitual|antes/.test(tx)) ask.push("Creatinina " + cr + " mg/dL: ¿cuál es la basal? Distingue lesión aguda de ERC.");
+  if (/anuri|oligur|poca orina|sin orina|no orina/.test(tx)) { fl("warn", "Oliguria o anuria referida.", "lra"); if (!isFinite(cr)) ask.push("¿Creatinina y urea actuales?"); }
+  if (/dialisis|hemodialisis|\bhd\b|peritoneal/.test(tx) && /fiebre|escalofr|catéter|cateter/.test(tx)) boost["bacteriemia-hd"] = (boost["bacteriemia-hd"] || 0) + 200;
+  var toks = tx.replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(function (w) { return w.length >= 3 && QC_STOP.indexOf(w) < 0 && !/^\d/.test(w); });
+  var res = [];
+  DATA.forEach(function (t) {
+    if (/^calc-/.test(t.id)) return;
+    var s = boost[t.id] || 0;
+    toks.forEach(function (w) { s += score(t, [w]); });
+    if (s >= 45) res.push({ t: t, s: s });
+  });
+  res.sort(function (a, b) { return b.s - a.s; });
+  return { flags: flags, ask: ask, top: res.slice(0, 4) };
+}
+function qcRender(r) {
+  var h = "";
+  if (!r.flags.length && !r.top.length) return '<p class="hd-note">No encontré datos clínicos ni un tema que coincida. Escribe el motivo y los valores, por ejemplo: «K 7,1, creatinina 6, anúrico, ECG con T picudas».</p>';
+  if (r.flags.length) h += '<div class="qc-fl">' + r.flags.map(function (f) { return '<div class="qc-f ' + f.sev + '">' + dlE(f.msg) + '</div>'; }).join("") + '</div>';
+  if (r.top.length) {
+    h += '<h3 class="qc-h">Qué revisar primero</h3>';
+    r.top.forEach(function (x) {
+      var t = x.t, al = t.alert ? strip(String(t.alert)).replace(/\s+/g, " ").trim() : "";
+      h += '<div class="qc-t"><b>' + dlE(t.title) + '</b>' + (t.sum ? '<p>' + dlE(strip(String(t.sum))) + '</p>' : '') + (al ? '<p class="qc-al"><b>Alerta:</b> ' + dlE(al) + '</p>' : '') + '<button type="button" class="btn ghost" data-qcopen="' + t.id + '">Abrir manejo completo</button></div>';
+    });
+  }
+  if (r.ask.length) h += '<h3 class="qc-h">Datos que faltan</h3><ul class="qc-q">' + r.ask.map(function (a) { return "<li>" + dlE(a) + "</li>"; }).join("") + "</ul>";
+  h += '<p class="hd-note">Orientación con los umbrales y temas de la app. No sustituye el juicio clínico ni el protocolo de tu unidad.</p>';
+  return h;
+}
+function qcHTML() {
+  return '<section class="hd-card qc"><h2>Caso rápido</h2><p class="hd-note">Escribe el caso en una frase, con los valores. No hace falta llenar el informe.</p>' +
+    '<textarea id="qc-txt" rows="4" placeholder="Ej.: hombre de 62 años, diabético, anúrico hace 2 días, K 7,1, creatinina 6, ECG con T picudas">' + dlE(QC.txt) + '</textarea>' +
+    '<div class="dactions"><button type="button" class="btn" id="qc-go">Analizar caso</button><button type="button" class="btn ghost" id="qc-clr">Borrar</button></div><div id="qc-out">' + QC.out + '</div></section>';
+}
+document.addEventListener("input", function (e) { if (e.target && e.target.id === "qc-txt") QC.txt = e.target.value; });
+document.addEventListener("click", function (e) {
+  var t = e.target.closest ? e.target.closest("#qc-go,#qc-clr,[data-qcopen]") : null; if (!t) return;
+  if (t.id === "qc-go") { var ta = $("#qc-txt"); QC.txt = ta ? ta.value : QC.txt; QC.out = QC.txt.trim() ? qcRender(qcAnalyze(QC.txt)) : ""; var o = $("#qc-out"); if (o) o.innerHTML = QC.out; return; }
+  if (t.id === "qc-clr") { QC.txt = ""; QC.out = ""; var ta2 = $("#qc-txt"); if (ta2) ta2.value = ""; var o2 = $("#qc-out"); if (o2) o2.innerHTML = ""; return; }
+  var id = t.getAttribute("data-qcopen"); var tab = document.querySelector('.tab[data-mode="temas"]'); if (tab) tab.click(); openTopic(id);
+});
+
 /*BACKNAV*/
 (function () {
   var cur = null, popping = false;
