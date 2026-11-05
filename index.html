@@ -2,6 +2,12 @@
 <title>Nefro Express</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#061641">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nefro Express: tu guía rápida en nefrología">
+<meta property="og:description" content="Temas, calculadoras, laboratorio, diálisis y ajuste de fármacos en enfermedad renal. Gratis.">
+<meta property="og:image" content="https://nefroexpress.github.io/nefro_express/portada.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nefroexpress.github.io/nefro_express/portada.jpg">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -953,7 +959,8 @@ html.home-navy .golink.gl8[class]>span{border-left-color:rgb(30,150,100)!importa
         <p><b>¿Encontraste un error?</b> Avisa a quien te compartió la guía, indicando el tema y el dato.</p>
       </div>
     </details>
-<p class="nxver" style="margin:10px 0 0;font-size:.74rem;opacity:.75">Versión de la app: 4 nov 2026 · pestaña Labs más limpia, urgencia hipertensiva, infección del catéter de HD, infecciones urinarias en ERC y trasplante, vacunas y tratamiento conservador nuevos, clasificaciones en cuadros, calculadoras unidas en «Calcular», con mg/dL y mmol/L; infusiones (furosemida, noradrenalina, heparina) y goteo; sin déficit de hierro</p>
+<div id="nx-share" style="margin:12px 0 0"><button class="btn ghost" type="button" id="nx-share-btn">Compartir la app</button><div id="nx-share-out" hidden style="margin-top:8px"><p class="hd-note" style="margin:0 0 6px">Mantén pulsado el enlace, selecciónalo y cópialo:</p><input type="text" id="nx-share-url" readonly value="https://nefroexpress.github.io/nefro_express/" style="width:100%;box-sizing:border-box;font:inherit;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:inherit"></div></div>
+<p class="nxver" style="margin:10px 0 0;font-size:.74rem;opacity:.75">Versión de la app: 4 nov 2026 · botón para compartir la app, portada al compartir el enlace, pestaña Labs más limpia, urgencia hipertensiva, infección del catéter de HD, infecciones urinarias en ERC y trasplante, vacunas y tratamiento conservador nuevos, clasificaciones en cuadros, calculadoras unidas en «Calcular», con mg/dL y mmol/L; infusiones (furosemida, noradrenalina, heparina) y goteo; sin déficit de hierro</p>
   </footer>
 </div>
 
@@ -5746,6 +5753,20 @@ var LABQ = { sel: null, q: "", val: "", ui: 0, sex: "M" };
 })();
 /*ENDLABMOD*/
 
+/*SHAREMOD*/
+(function () {
+  var URL0 = "https://nefroexpress.github.io/nefro_express/";
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("#nx-share-btn"); if (!b) return;
+    var show = function () { var o = document.getElementById("nx-share-out"), u = document.getElementById("nx-share-url"); if (o) o.hidden = false; if (u) { u.focus(); u.select(); try { u.setSelectionRange(0, 999); } catch (x) {} } };
+    try {
+      if (navigator.share) { navigator.share({ title: "Nefro Express", text: "Nefro Express: tu guía rápida en nefrología", url: URL0 }).catch(function () { show(); }); return; }
+    } catch (x) {}
+    try { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(URL0).then(function () { b.textContent = "Enlace copiado"; show(); }, show); return; } } catch (x) {}
+    show();
+  });
+})();
+/*ENDSHAREMOD*/
 /*BACKNAV*/
 (function () {
   var cur = null, popping = false;
