@@ -2537,7 +2537,7 @@ function hdPredict(K, tMin, V, uf, W) {
 var HD = { v: {} };
 var HD_EX = { sex: "M", age: "58", h: "170", w: "72", wpre: "75.2", kru: "0.5", ctx: "mant", tfge: "6", k: "5.6", hco3: "19", ph: "", ca: "2.15", pas: "150",
   idwg: "3.2", acc: "av", qb: "350", qd: "500", koa: "1200", fvivo: "0.9", n: "3", tgt: "1.4",
-  bpre: "62", bpost: "17", tmin: "210", ufreal: "", ihd: "", hem: "", hf: "", hit: "", prevclot: "", anti: "auto", vial: "5000", ufhb: "", ufhr: "", extra: "" };
+  ufreal: "", ihd: "", hem: "", hf: "", hit: "", prevclot: "", anti: "auto", vial: "5000", ufhb: "", ufhr: "", extra: "" };
 
 var HD_FIELDS = [
   { sec: "Paciente", items: [
@@ -2588,12 +2588,6 @@ var HD_FIELDS = [
     { id: "hdf", l: "Hemodiafiltración on-line (postdilución)", t: "c" },
     { id: "n", l: "Sesiones por semana", u: "" },
     { id: "tgt", l: "spKt/V objetivo por sesión", u: "", hint: "SEN: objetivo 1.3, mínimo 1.2 (por defecto). KDOQI 2015: 1.4." }
-  ] },
-  { sec: "Sesión realizada (opcional, para evaluar la adecuación)", items: [
-    { id: "bpre", l: "Urea o BUN pre-HD", u: "", hint: "Cualquier unidad: solo importa la relación." },
-    { id: "bpost", l: "Urea o BUN post-HD", u: "", hint: "Misma unidad que la anterior." },
-    { id: "tmin", l: "Duración real de la sesión", u: "min" },
-    { id: "ufreal", l: "UF real", u: "L", hint: "Si lo dejas vacío se usa peso pre − peso seco." }
   ] }
 ];
 
@@ -2856,10 +2850,10 @@ function hdBuild() {
   } else {
     body += '<p class="hd-note">Introduce Qb, Qd y KoA del dializador para calcular el tiempo necesario.</p>';
   }
-  var rxSec = '<section class="hd-card hd-out"><h2>3. Prescripción recomendada para alcanzar el objetivo</h2>' + (hasEq ? '<p class="hd-note"><b>Objetivo ideal:</b> spKt/V ≥ ' + f2(tgt) + ' por sesión (mínimo 1,2) y URR ≥65–70 %, con la UF dentro de la tasa segura. La pauta es la más corta que lo cumple con el equipo y el acceso introducidos.</p>' : '') + body + '</section>';
+  var rxSec = '<section class="hd-card hd-out"><h2>Prescripción recomendada para alcanzar el objetivo</h2>' + (hasEq ? '<p class="hd-note"><b>Objetivo ideal:</b> spKt/V ≥ ' + f2(tgt) + ' por sesión (mínimo 1,2) y URR ≥65–70 %, con la UF dentro de la tasa segura. La pauta es la más corta que lo cumple con el equipo y el acceso introducidos.</p>' : '') + body + '</section>';
 
   // Evaluación de la sesión realizada
-  var bpre = hdN("bpre"), bpost = hdN("bpost"), tm = hdN("tmin");
+  var bpre = NaN, bpost = NaN, tm = NaN;
   if (isFinite(bpre) && isFinite(bpost) && isFinite(tm) && bpre > 0 && bpost > 0 && tm > 30) {
     var R = bpost / bpre, tH = tm / 60, sp = hdSp(R, tH, uf, w);
     var ev = '';
